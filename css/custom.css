@@ -74,4 +74,6 @@ body {
     border-radius: 4px;
     padding: 1px 10px 1px 9px;
     margin-bottom: 19px;
+    line-height: 1.7;
+    font-size: 0.9rem;
 }
