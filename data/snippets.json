@@ -3,24 +3,24 @@
       "number": 1,
       "tool": "JUNIT5",
       "tip": "With JUnit5 you can parameterize your tests using a <code>ValueSource</code>",
-      "link": "https://junit.org/junit5/docs/current/user-guide/#writing-tests-parameterized-tests"
+      "codex": "\nfunction fibonacci(num)\n{\n    var num1=0;\n    var num2=1;\n    var sum;\n    var i=0;\n\n    for (i = 0; i < num; i++)\n    {\n       sum=num1+num2;\n       num1=num2;\n       num2=sum;\n    }\n    return num2;\n}\nconsole.log(fibonacci(155));"
     },
     {
       "number": 2,
       "tool": "JAVA",
       "tip": "Selenium WebDriver has a Grid based on Docker images where you can distribute and/or parallelise your web tests",
-      "link": "https://github.com/SeleniumHQ/docker-selenium"
+      "codex": "\na + b = c"
     },
     {
       "number": 3,
       "tool": "WIREMOCK",
       "tip": "You can run WireMock in different modes: standalone, JUnit 4.x Rule or through the <code>WireMockServer</code> class",
-      "link": "http://wiremock.org/docs/getting-started"
+      "codex": "\nnpm install -g @pact-foundation/pact-node\nexport PACT_BROKER_BASE_URL\n-broker-base-url=<broker url>"
     },
     {
       "number": 4,
       "tool": "PYTHON",
       "tip": "You can run WireMock in different modes: standalone, JUnit 4.x Rule or through the <code>WireMockServer</code> class",
-      "link": "http://wiremock.org/docs/getting-started"
+      "codex": "test code"
     }
   ]

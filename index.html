@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="css\style.css" />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -11,6 +13,8 @@
         integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
         crossorigin="anonymous" />
     <link rel="stylesheet" href="css\custom.css">
+
+    <script src="js\main.js" defer></script>
     <title>Snippets 101</title>
 </head>
 
@@ -37,30 +41,36 @@
                     <label class="form-check-label" for="allSnippets">All Snippets</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="filterOptions" id="junit5" value="junit">
-                    <label class="form-check-label" for="junit5">Java</label>
+                    <input class="form-check-input" type="radio" name="filterOptions" id="java" value="java">
+                    <label class="form-check-label" for="java">Java</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="filterOptions" id="selenium" value="selenium">
-                    <label class="form-check-label" for="selenium">Python</label>
+                    <input class="form-check-input" type="radio" name="filterOptions" id="python" value="python">
+                    <label class="form-check-label" for="python">Python</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="filterOptions" id="shell" value="shell">
+                    <label class="form-check-label" for="shell">Shell</label>
                 </div>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="filterOptions" id="wiremock" value="wiremock">
-                    <label class="form-check-label" for="wiremock">Shell</label>
+                    <label class="form-check-label" for="wiremock">Wiremock</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="filterOptions" id="testng" value="testng">
-                    <label class="form-check-label" for="testng">Wiremock</label>
+                    <input class="form-check-input" type="radio" name="filterOptions" id="pactflow" value="pactflow">
+                    <label class="form-check-label" for="pactflow">PactFlow</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="filterOptions" id="restassured"
-                        value="restassured">
-                    <label class="form-check-label" for="restassured">PactFlow</label>
+                    <input class="form-check-input" type="radio" name="filterOptions" id="junit5" value="junit5">
+                    <label class="form-check-label" for="junit5">JUnit5</label>
                 </div>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="filterOptions" id="restassured"
-                        value="restassured">
-                    <label class="form-check-label" for="restassured">JUnit5</label>
+                    <input class="form-check-input" type="radio" name="filterOptions" id="mac" value="mac">
+                    <label class="form-check-label" for="mac">MAC</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="filterOptions" id="hacking" value="hacking">
+                    <label class="form-check-label" for="hacking">Hacking</label>
                 </div>
             </div>
         </div>
@@ -96,6 +106,7 @@
 
     <script src="js/load.js"></script>
     <script src="js/top.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
 
     <script id="template" type="text/template">
         <div class='col-sm d-flex mt-4 cardItem'>
@@ -104,31 +115,43 @@
                     <h5 id="number" class="card-title">Snippet #{{number}}</h5>
                     <h6 id="tool" class="card-subtitle mb-2 text-muted">{{tool}}</h6>
                     <p id="tip" class="card-text">{{{tip}}}</p>
-                    <a id="link" href="{{link}}" target="blank" class="card-link">Reference</a>
-                    <br/>
-                    <button type="button" class="btn btn-primary view-snippet" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <button type="button" class="btn btn-primary view-snippet" data-id="{{{codex}}}" onclick="onSnippetCall(this)" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                         View Snippet
                     </button>
                 </div>
             </div>
-        </div>
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                    ...
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body edit-content">
+                            <div class="container">
+                                <p class="language" id="language-copy">JavaScript</p>
+                                <div class="code-wrapper">
+                                    <pre class="code-x">
+                                      <code id="code" value></code>
+                                    </pre>
+                                  <button id="copy-button">Copy</button>
+                                </div>
+                                <span id="copy-success">Code copied! :)</span>
+                              </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal">Close</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        
 	</script>
+    <script>
+        function onSnippetCall(obj) {
+            $("#code").html(obj.getAttribute("data-id"));
+        }
+    </script>
 </body>
 
 </html>
