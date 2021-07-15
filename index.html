@@ -14,7 +14,6 @@
         crossorigin="anonymous" />
     <link rel="stylesheet" href="css\custom.css">
 
-    <script src="js\main.js" defer></script>
     <title>Snippets 101</title>
 </head>
 
@@ -39,6 +38,10 @@
                     <input class="form-check-input" type="radio" name="filterOptions" id="allSnippets" value="allSnippets"
                         checked>
                     <label class="form-check-label" for="allSnippets">All Snippets</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="filterOptions" id="amazonlinux" value="amazonlinux">
+                    <label class="form-check-label" for="amazonlinux">Amazon Linux</label>
                 </div>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="filterOptions" id="git" value="git">
@@ -110,13 +113,13 @@
                         <div class="modal-header">
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <div class="modal-body edit-content">
+                        <div class="modal-body">
                             <div class="container">
                                 <div class="code-wrapper">
-                                    <pre class="code-x">
+                                    <pre>
                                       <code id="code" value></code>
                                     </pre>
-                                  <button id="copy-button">Copy ✄</button>
+                                  <button id="copy-button" onclick="onCopy(this)">Copy ✄</button>
                                 </div>
                                 <span id="copy-success">Code copied! :)</span>
                               </div>
@@ -133,6 +136,27 @@
     <script>
         function onSnippetCall(obj) {
             $("#code").html(obj.getAttribute("data-id"));
+        }
+    </script>
+    <script>
+        function onCopy(obj) {
+            hljs.initHighlightingOnLoad();
+            const codeBlock = document.getElementById('code');
+            const copyButton = document.getElementById('copy-button');
+            const copySuccess = document.getElementById('copy-success');
+            
+            const text = codeBlock.innerText;
+            navigator.clipboard.writeText(text).then(
+                () => {
+                    copySuccess.classList.add('show-message');
+                    setTimeout(() => {
+                        copySuccess.classList.remove('show-message');
+                    }, 2500);
+                },
+                () => {
+                    console.log('Error writing to the clipboard');
+                }
+            );
         }
     </script>
 </body>

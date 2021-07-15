@@ -1,32 +1,44 @@
 [
-    {
-      "number": 1,
-      "tool": "GIT",
-      "tip": "git empty commit & push",
-      "codex": "\ngit commit --allow-empty -m &quot;Trigger rebuild&quot;\ngit push"
-    },
-    {
-      "number": 2,
-      "tool": "GITHUB",
-      "tip": "fetch github secret on github actions",
-      "codex": "\n- name: Install Dependencies\n      run: |\n        npm config set //npm.fontawesome.com/:_authToken=${ACCOUNT_ID}\n        npm ci\n      env:\n        ACCOUNT_ID: ${{ secrets.ACCOUNT_ID }}"
-    },
-    {
-      "number": 3,
-      "tool": "FIREBASE",
-      "tip": "firebase installation and first deployment",
-      "codex": "\nnpm install -g firebase-tools\nfirebase login\nfirebase init\nfirebase deploy"
-    },
-    {
-      "number": 4,
-      "tool": "FIREBASE",
-      "tip": "initialize firebase",
-      "codex": "\nconst firebase = require(&quot;firebase&quot;);\nrequire(&quot;firebase/firestore&quot;);"
-    },
-    {
-      "number": 5,
-      "tool": "NETWORK",
-      "tip": "print ip address using javascript",
-      "codex": "\nimport { exec } from 'child_process';\n\nexec('curl ipinfo.io/ip', (err, stdout, stderr) => {\n    logger('ip address of the executor', stdout);\n});"
-    }
-  ]
+  {
+    "number": 7,
+    "tool": "AMAZONLINUX",
+    "tip": "access Docker commands in Amazon Linux2 ec2-user",
+    "codex": "\nsudo usermod -a -G docker ec2-user\nsudo chmod 666 /var/run/docker.sock\ndocker version"
+  },
+  {
+    "number": 6,
+    "tool": "AMAZONLINUX",
+    "tip": "install & start Docker in Amazon Linux2",
+    "codex": "\nsudo yum update -y\nsudo yum -y install docker\n\nsudo service docker start"
+  },
+  {
+    "number": 5,
+    "tool": "NETWORK",
+    "tip": "print ip address using javascript",
+    "codex": "\nimport { exec } from 'child_process';\n\nexec('curl ipinfo.io/ip', (err, stdout, stderr) => {\n    logger('ip address of the executor', stdout);\n});"
+  },
+  {
+    "number": 4,
+    "tool": "FIREBASE",
+    "tip": "initialize firebase",
+    "codex": "\nconst firebase = require(&quot;firebase&quot;);\nrequire(&quot;firebase/firestore&quot;);"
+  },
+  {
+    "number": 3,
+    "tool": "FIREBASE",
+    "tip": "install & deploy firebase",
+    "codex": "\nnpm install -g firebase-tools\nfirebase login\nfirebase init\nfirebase deploy"
+  },
+  {
+    "number": 2,
+    "tool": "GITHUB",
+    "tip": "how to use github secret on github actions",
+    "codex": "\n- name: Install Dependencies\n      run: |\n        npm config set //npm.fontawesome.com/:_authToken=${ACCOUNT_ID}\n        npm ci\n      env:\n        ACCOUNT_ID: ${{ secrets.ACCOUNT_ID }}"
+  },
+  {
+    "number": 1,
+    "tool": "GIT",
+    "tip": "git empty commit & push",
+    "codex": "\ngit commit --allow-empty -m &quot;Trigger rebuild&quot;\ngit push"
+  } 
+]
