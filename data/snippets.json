@@ -1,19 +1,25 @@
 [
     {
       "number": 1,
-      "tool": "JUNIT",
+      "tool": "JUNIT5",
       "tip": "With JUnit5 you can parameterize your tests using a <code>ValueSource</code>",
       "link": "https://junit.org/junit5/docs/current/user-guide/#writing-tests-parameterized-tests"
     },
     {
       "number": 2,
-      "tool": "SELENIUM",
+      "tool": "JAVA",
       "tip": "Selenium WebDriver has a Grid based on Docker images where you can distribute and/or parallelise your web tests",
       "link": "https://github.com/SeleniumHQ/docker-selenium"
     },
     {
       "number": 3,
       "tool": "WIREMOCK",
+      "tip": "You can run WireMock in different modes: standalone, JUnit 4.x Rule or through the <code>WireMockServer</code> class",
+      "link": "http://wiremock.org/docs/getting-started"
+    },
+    {
+      "number": 4,
+      "tool": "PYTHON",
       "tip": "You can run WireMock in different modes: standalone, JUnit 4.x Rule or through the <code>WireMockServer</code> class",
       "link": "http://wiremock.org/docs/getting-started"
     }
