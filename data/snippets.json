@@ -1,26 +1,32 @@
 [
     {
       "number": 1,
-      "tool": "JUNIT5",
-      "tip": "With JUnit5 you can parameterize your tests using a <code>ValueSource</code>",
-      "codex": "\nfunction fibonacci(num)\n{\n    var num1=0;\n    var num2=1;\n    var sum;\n    var i=0;\n\n    for (i = 0; i < num; i++)\n    {\n       sum=num1+num2;\n       num1=num2;\n       num2=sum;\n    }\n    return num2;\n}\nconsole.log(fibonacci(155));"
+      "tool": "GIT",
+      "tip": "git empty commit & push",
+      "codex": "\ngit commit --allow-empty -m &quot;Trigger rebuild&quot;\ngit push"
     },
     {
       "number": 2,
-      "tool": "JAVA",
-      "tip": "Selenium WebDriver has a Grid based on Docker images where you can distribute and/or parallelise your web tests",
-      "codex": "\na + b = c"
+      "tool": "GITHUB",
+      "tip": "fetch github secret on github actions",
+      "codex": "\n- name: Install Dependencies\n      run: |\n        npm config set //npm.fontawesome.com/:_authToken=${ACCOUNT_ID}\n        npm ci\n      env:\n        ACCOUNT_ID: ${{ secrets.ACCOUNT_ID }}"
     },
     {
       "number": 3,
-      "tool": "WIREMOCK",
-      "tip": "You can run WireMock in different modes: standalone, JUnit 4.x Rule or through the <code>WireMockServer</code> class",
-      "codex": "\nnpm install -g @pact-foundation/pact-node\nexport PACT_BROKER_BASE_URL\n-broker-base-url=<broker url>"
+      "tool": "FIREBASE",
+      "tip": "firebase installation and first deployment",
+      "codex": "\nnpm install -g firebase-tools\nfirebase login\nfirebase init\nfirebase deploy"
     },
     {
       "number": 4,
-      "tool": "PYTHON",
-      "tip": "You can run WireMock in different modes: standalone, JUnit 4.x Rule or through the <code>WireMockServer</code> class",
-      "codex": "test code"
+      "tool": "FIREBASE",
+      "tip": "initialize firebase",
+      "codex": "\nconst firebase = require(&quot;firebase&quot;);\nrequire(&quot;firebase/firestore&quot;);"
+    },
+    {
+      "number": 5,
+      "tool": "NETWORK",
+      "tip": "print ip address using javascript",
+      "codex": "\nimport { exec } from 'child_process';\n\nexec('curl ipinfo.io/ip', (err, stdout, stderr) => {\n    logger('ip address of the executor', stdout);\n});"
     }
   ]
