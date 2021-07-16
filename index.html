@@ -109,7 +109,7 @@
                                 <div class="container">
                                     <div class="code-wrapper">
                                         <pre>
-                                        <code id="code" value></code>
+                                        <code style="margin-left: -89%;" id="code" value></code>
                                         </pre>
                                     <button id="copy-button" onclick="onCopy(this)">Copy ✄</button>
                                     </div>
@@ -143,7 +143,7 @@
                         copySuccess.classList.add('show-message');
                         setTimeout(() => {
                             copySuccess.classList.remove('show-message');
-                        }, 500);
+                        }, 1000);
                     },
                     () => {
                         console.log('Error writing to the clipboard');
