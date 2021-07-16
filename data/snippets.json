@@ -1,5 +1,113 @@
 [
   {
+    "number": 26,
+    "tool": "PYTHON",
+    "tip": "get values using regex in python",
+    "codex": "import re<br/>re.findall(&quot;j_id\\d+:j_id\\d+&quot;,res.text)"
+  },
+  {
+    "number": 25,
+    "tool": "MAVEN",
+    "tip": "ignore the Java Enforcer issues while compilation",
+    "codex": "mvn clean install -Denforcer.skip=true"
+  },
+  {
+    "number": 24,
+    "tool": "MAC",
+    "tip": "check SSL certificate exist?",
+    "codex": "keytool -list -keystore /Library/Java/JavaVirtualMachines/jdk1.8.0_281.jdk/Contents/Home/jre/lib/security/cacerts<br/><br/>-Djavax.net.ssl.trustStore=&quot;/Library/Java/JavaVirtualMachines/jdk1.8.0_281.jdk/Contents/Home/jre/lib/security/cacerts&quot; <br/>-Djavax.net.ssl.trustStorePassword=&quot;changeit&quot;"
+  },
+  {
+    "number": 23,
+    "tool": "MAC",
+    "tip": "add SSL certificate in cacert",
+    "codex": "keytool -import -file &quot;/Users/prashanth.rajappa/Desktop/xyz.com.cer&quot; -keystore &quot;/Library/Java/JavaVirtualMachines/jdk1.8.0_281.jdk/Contents/Home/jre/lib/security/cacerts&quot; -alias &quot;meshgateway_CA_certificate&quot;<br/><br/>password: changeit"
+  },
+  {
+    "number": 22,
+    "tool": "MAC",
+    "tip": "hide and unhide files and folders in mac",
+    "codex": "CMD+SHIFT+."
+  },
+  {
+    "number": 21,
+    "tool": "CHROME",
+    "tip": "open chrome with new profile and cors disabled",
+    "codex": "open -na Google\\ Chrome --args --user-data-dir=/tmp/temporary-chrome-profile-dir --disable-web-security --disable-site-isolation-trials<br/>"
+  },
+  {
+    "number": 20,
+    "tool": "SQL",
+    "tip": "stop & start mysql in mac",
+    "codex": "mysql.server stop<br/>mysqladmin -uroot shutdown<br/><br/>mysql.server start<br/>mysql -uroot"
+  },
+  {
+    "number": 19,
+    "tool": "PYTHON",
+    "tip": "read directory or file from the current location",
+    "codex": "Root_Dir=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))<br/>print(Root_Dir)<br/>sys.path.append(Root_Dir)<br/><br/>data_folder=os.path.join(Root_Dir,&quot;data&quot;)<br/>file_path=os.path.join(data_folder,&quot;credential_csv_newtour.csv&quot;)<br/>"
+  },
+  {
+    "number": 18,
+    "tool": "JAVASCRIPT",
+    "tip": "command to run in browser console to check if _ngZone properties are false",
+    "codex": "getAllAngularTestabilities()"
+  },
+  {
+    "number": 17,
+    "tool": "SQL",
+    "tip": "import sqldump with tables one by one",
+    "codex": "for SQL in ./testing/*.sql; mysql -h 127.0.0.1 -u root -P 3366 databasename -pc8JQ5J4a &lt; $SQL;<br/>"
+  },
+  {
+    "number": 16,
+    "tool": "SQL",
+    "tip": "import sqldump",
+    "codex": "mysql -h 127.0.0.1 -u root -P 3366 databasename -pc8JMQ5J4a &lt; ~/Documents/databasename.sql<br/>"
+  },
+  {
+    "number": 15,
+    "tool": "SQL",
+    "tip": "sqldump all tables one by one from a database",
+    "codex": "for T in `mysql --skip-column-names -h 127.0.0.1 -u root -P 3366 -e 'show tables from databasename' -pc8JjJ4a`; do echo $T; mysqldump -u root -h 127.0.0.1 -P 3366 databasename $T -pc8JjQ5J4a --set-gtid-purged=OFF --column-statistics=0 &gt; $T.sql; done;<br/>for T in `mysql -h 127.0.0.1 -u root -P 3366 -e 'show tables from databasename' -pc8JjAQ5J4a`; if [[ $T != *Table* ]]; then mysqldump -u root -h 127.0.0.1 -P 3366 databasename $T -pc8JjMQ5J4a --set-gtid-purged=OFF --column-statistics=0 &gt; $T.sql; else continue; fi;"
+  },
+  {
+    "number": 14,
+    "tool": "SQL",
+    "tip": "list out all the tables of a database",
+    "codex": "for T in `mysql -h 127.0.0.1 -u root -P 3366 -e 'show tables from databasename' -pc8JjQ5J4a`; do echo $T; done;<br/>"
+  },
+  {
+    "number": 13,
+    "tool": "SQL",
+    "tip": "zip sqldump of a database",
+    "codex": "mysqldump -u root -h 127.0.0.1 -P 3366 databasename -pc8JjAjI5J4a --set-gtid-purged=OFF --column-statistics=0 | gzip -c &gt; databasename.dump.gz<br/>"
+  },
+  {
+    "number": 12,
+    "tool": "SQL",
+    "tip": "sqldump of a database",
+    "codex": "mysqldump -h 127.0.0.1 -u root -P 3366 -pc8JjAQ5J4a databasename --set-gtid-purged=OFF --column-statistics=0 &gt; databasename.sql<br/>"
+  },
+  {
+    "number": 11,
+    "tool": "SHELL",
+    "tip": "command line SSH tunnel",
+    "codex": "ssh -v -N -i ~/Documents/bastion-host2.pem ec2-user@54.194.36.65 -L 3366:test-db.env-qa.org:3306<br/>"
+  },
+  {
+    "number": 10,
+    "tool": "JAVASCRIPT",
+    "tip": "loops and await",
+    "codex": "let branches = [&quot;Abu Dhabi&quot;, &quot;Al Ain&quot;, &quot;Dubai&quot;, &quot;Fujairah&quot;, &quot;Ras al-Khaimah&quot;, &quot;Sharjah&quot;, &quot;Ajman&quot;];<br/><br/>for (const branch of branches) {<br/>    console.log(branch);<br/>    await ...;<br/>}"
+  },
+  {
+    "number": 9,
+    "tool": "SHELL",
+    "tip": "execute shell cmds using javascript",
+    "codex": "const { exec } = require(&quot;child_process&quot;);<br/><br/>desc('Runner Task');<br/>task('run', function (environment, country) {<br/>  exec(&quot;ls -la&quot;, (error, stdout, stderr) =&gt; {<br/>    if (error) {<br/>        console.log(`error: ${error.message}`);<br/>        return;<br/>    }<br/>    if (stderr) {<br/>        console.log(`stderr: ${stderr}`);<br/>        return;<br/>    }<br/>    console.log(`stdout: ${stdout}`);<br/>  });<br/>});"
+  },
+  {
     "number": 8,
     "tool": "MAVEN",
     "tip": "default .m2 settings.xml",
