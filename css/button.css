@@ -95,3 +95,9 @@
     color: #fff;
     padding: 5px 15px;
   }
+
+  .btn.btn-primary.view-snippet:active, .btn.btn-primary.view-snippet:hover, .btn.btn-primary.view-snippet:focus {
+    color: #fff;
+    background-color: #0074D9;
+    border-color: #0074D9;
+  }
