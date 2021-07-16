@@ -1,5 +1,11 @@
 [
   {
+    "number": 8,
+    "tool": "MAVEN",
+    "tip": "default .m2 settings.xml",
+    "codex": "&#x3C;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;<br/>&lt; settings xmlns=&quot;http://maven.apache.org/SETTINGS/1.0.0&quot;<br/>          xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;<br/>          xsi:schemaLocation=&quot;http://maven.apache.org/SETTINGS/1.0.0<br/>                          http://maven.apache.org/xsd/settings-1.0.0.xsd&quot;&gt;<br/>    &lt; mirrors&gt;<br/>    &lt; mirror&gt;<br/>        &lt; id&gt;central&lt; /id&gt;<br/>        &lt; name&gt;central&lt; /name&gt;<br/>        &lt; url&gt;https://repo1.maven.org/maven2/&lt; /url&gt;<br/>        &lt; mirrorOf&gt;maven_central&lt; /mirrorOf&gt;<br/>    &lt; /mirror&gt;<br/>    &lt; /mirrors&gt;<br/>&lt; /settings&gt;"
+  },
+  {
     "number": 7,
     "tool": "AMAZONLINUX",
     "tip": "access Docker commands in Amazon Linux2 ec2-user",
