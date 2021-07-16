@@ -113,7 +113,7 @@
                                         </pre>
                                     <button id="copy-button" onclick="onCopy(this)">Copy ✄</button>
                                     </div>
-                                    <span id="copy-success">Code copied! :)</span>
+                                    <span id="copy-success">Copied ✓</span>
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -143,7 +143,7 @@
                         copySuccess.classList.add('show-message');
                         setTimeout(() => {
                             copySuccess.classList.remove('show-message');
-                        }, 2500);
+                        }, 500);
                     },
                     () => {
                         console.log('Error writing to the clipboard');
