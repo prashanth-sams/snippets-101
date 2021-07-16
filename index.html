@@ -1,166 +1,156 @@
 <!doctype html>
 <html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <link rel="stylesheet" href="css\style.css" />
-    <link rel="stylesheet" href="css\button.css" />
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
-        crossorigin="anonymous" />
-    <link rel="stylesheet" href="css\custom.css">
-
-    <title>Snippets 101</title>
-</head>
-
-<body>
-    <main class="container">
-        <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center text-white">
-            <h1 class="display-4">Snippets 101</h1>
-            <p>
-                <a class="github-button" href="https://github.com/prashanth-sams" data-size="large"
-                    aria-label="Follow @prashanth-sams on GitHub">Follow @prashanth-sams</a>
-                <a href="https://twitter.com/intent/follow?screen_name=prashanthsams" class="btn" style="font-size: 13px;"
-                    aria-label="Follow @prashanthsams on Twitter" target="_blank">
-                    Follow @prashanthsams
-                </a>
-            </p>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-offset-5 text-center">
-                <form action="" class="formulario">
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="filterOptions" id="allSnippets" value="allSnippets"
-                            checked>
-                        <label class="form-check-label" for="allSnippets">All Snippets</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="filterOptions" id="amazonlinux" value="amazonlinux">
-                        <label class="form-check-label" for="amazonlinux">Amazon Linux</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="filterOptions" id="git" value="git">
-                        <label class="form-check-label" for="git">Git</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="filterOptions" id="github" value="github">
-                        <label class="form-check-label" for="github">Github</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="filterOptions" id="firebase" value="firebase">
-                        <label class="form-check-label" for="firebase">Firebase</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="filterOptions" id="network" value="network">
-                        <label class="form-check-label" for="network">Network</label>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <div class="container mt-4">
-            <div class="container mt-4">
-                <div id="cardList" class="row">
-                </div>
-            </div>
-        </div>
-
-        <button onclick="topFunction()" id="scrollToTop" title="Go to top">Top</button>
-
-        <footer class="pt-4 my-md-5 pt-md-2 border-top">
-            <div class="text-center center-block my-md-2">
-                <a href="https://github.com/prashanth-sams" style="color: #ffffff;" target="_blank" >
-                    <i class="fab fa-github fa-3x social"></i></a>
-                <a href="https://twitter.com/prashanthsams" style="color: #ffffff;" target="_blank">
-                    <i class="fab fa-twitter fa-3x social"></i></a>
-                <a href="https://www.linkedin.com/in/prashanth-sams-58208953/" style="color: #ffffff;" target="_blank">
-                    <i class="fab fa-linkedin fa-3x social"></i></a>
-            </div>
-        </footer>
-    </main>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
-    </script>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
-
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-
-    <script src="js/load.js"></script>
-    <script src="js/top.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-
-    <script id="template" type="text/template">
-        <div class='col-sm d-flex mt-4 cardItem'>
-            <div id="card" class='card' style='width: 18rem;'>
-                <div id="cardBody" class="card-body flex-fill">
-                    <h5 id="number" class="card-title">Snippet #{{number}}</h5>
-                    <h6 id="tool" class="card-subtitle mb-2 text-muted">{{tool}}</h6>
-                    <p id="tip" class="card-text">{{{tip}}}</p>
-                    <button type="button" class="btn btn-primary view-snippet" data-id="{{{codex}}}" onclick="onSnippetCall(this)" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                        View Snippet
-                    </button>
-                </div>
-            </div>
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="container">
-                                <div class="code-wrapper">
-                                    <pre>
-                                      <code id="code" value></code>
-                                    </pre>
-                                  <button id="copy-button" onclick="onCopy(this)">Copy ✄</button>
-                                </div>
-                                <span id="copy-success">Code copied! :)</span>
-                              </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         
-	</script>
-    <script>
-        function onSnippetCall(obj) {
-            $("#code").html(obj.getAttribute("data-id"));
-        }
-    </script>
-    <script>
-        function onCopy(obj) {
-            hljs.initHighlightingOnLoad();
-            const codeBlock = document.getElementById('code');
-            const copyButton = document.getElementById('copy-button');
-            const copySuccess = document.getElementById('copy-success');
+        <link rel="stylesheet" href="css\style.css" />
+        <link rel="stylesheet" href="css\button.css" />
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+            integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+            crossorigin="anonymous" />
+        <link rel="stylesheet" href="css\custom.css">
+
+        <title>Snippets 101</title>
+    </head>
+
+    <body>
+        <main class="container">
+            <div class="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center text-white">
+                <h1 class="display-4">Snippets 101</h1>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-offset-5 text-center">
+                    <form action="" class="formulario">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="filterOptions" id="allSnippets" value="allSnippets"
+                                checked>
+                            <label class="form-check-label" for="allSnippets">All Snippets</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="filterOptions" id="amazonlinux" value="amazonlinux">
+                            <label class="form-check-label" for="amazonlinux">Amazon Linux</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="filterOptions" id="git" value="git">
+                            <label class="form-check-label" for="git">Git</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="filterOptions" id="github" value="github">
+                            <label class="form-check-label" for="github">Github</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="filterOptions" id="firebase" value="firebase">
+                            <label class="form-check-label" for="firebase">Firebase</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="filterOptions" id="network" value="network">
+                            <label class="form-check-label" for="network">Network</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="container mt-4">
+                <div class="container mt-4">
+                    <div id="cardList" class="row">
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="topFunction()" id="scrollToTop" title="Go to top">Top</button>
+
+            <footer class="pt-4 my-md-5 pt-md-2 border-top">
+                <div class="text-center center-block my-md-2">
+                    <a href="https://github.com/prashanth-sams" style="color: #ffffff;" target="_blank" >
+                        <i class="fab fa-github fa-3x social"></i></a>
+                    <a href="https://twitter.com/prashanthsams" style="color: #ffffff;" target="_blank">
+                        <i class="fab fa-twitter fa-3x social"></i></a>
+                    <a href="https://www.linkedin.com/in/prashanth-sams-58208953/" style="color: #ffffff;" target="_blank">
+                        <i class="fab fa-linkedin fa-3x social"></i></a>
+                </div>
+            </footer>
+        </main>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+        </script>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.min.js"></script>
+
+        <script src="js/load.js"></script>
+        <script src="js/top.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+
+        <script id="template" type="text/template">
+            <div class='col-sm d-flex mt-4 cardItem'>
+                <div id="card" class='card' style='width: 18rem;'>
+                    <div id="cardBody" class="card-body flex-fill">
+                        <h5 id="number" class="card-title">Snippet #{{number}}</h5>
+                        <h6 id="tool" class="card-subtitle mb-2 text-muted">{{tool}}</h6>
+                        <p id="tip" class="card-text">{{{tip}}}</p>
+                        <button type="button" class="btn btn-primary view-snippet" data-id="{{{codex}}}" onclick="onSnippetCall(this)" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                            View Snippet
+                        </button>
+                    </div>
+                </div>
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="container">
+                                    <div class="code-wrapper">
+                                        <pre>
+                                        <code id="code" value></code>
+                                        </pre>
+                                    <button id="copy-button" onclick="onCopy(this)">Copy ✄</button>
+                                    </div>
+                                    <span id="copy-success">Code copied! :)</span>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary close" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
-            const text = codeBlock.innerText;
-            navigator.clipboard.writeText(text).then(
-                () => {
-                    copySuccess.classList.add('show-message');
-                    setTimeout(() => {
-                        copySuccess.classList.remove('show-message');
-                    }, 2500);
-                },
-                () => {
-                    console.log('Error writing to the clipboard');
-                }
-            );
-        }
-    </script>
-</body>
+        </script>
+        <script>
+            function onSnippetCall(obj) {
+                $("#code").html(obj.getAttribute("data-id"));
+            }
+        </script>
+        <script>
+            function onCopy(obj) {
+                hljs.initHighlightingOnLoad();
+                const codeBlock = document.getElementById('code');
+                const copyButton = document.getElementById('copy-button');
+                const copySuccess = document.getElementById('copy-success');
+                
+                const text = codeBlock.innerText;
+                navigator.clipboard.writeText(text).then(
+                    () => {
+                        copySuccess.classList.add('show-message');
+                        setTimeout(() => {
+                            copySuccess.classList.remove('show-message');
+                        }, 2500);
+                    },
+                    () => {
+                        console.log('Error writing to the clipboard');
+                    }
+                );
+            }
+        </script>
+    </body>
 
 </html>
