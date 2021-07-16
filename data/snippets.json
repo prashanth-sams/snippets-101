@@ -1,5 +1,83 @@
 [
   {
+    "number": 39,
+    "tool": "POSTMAN",
+    "tip": "set environment",
+    "codex": "pm.environment.set(&quot;envName&quot;, pm.environment.name);<br/>console.log(environment['envName']);"
+  },
+  {
+    "number": 38,
+    "tool": "POSTMAN",
+    "tip": "validate body contains",
+    "codex": "pm.response.to.have.body(&quot;whole response body&quot;);<br/>pm.expect(pm.response.text()).to.include(&quot;part of response body&quot;);"
+  },
+  {
+    "number": 37,
+    "tool": "POSTMAN",
+    "tip": "fetch environment variable in test",
+    "codex": "pm.expect(jsonData.user).have.property('username', environment[&quot;username&quot;]);<br/>pm.expect(jsonData.user).have.property('username', environment.username);<br/>pm.expect(jsonData.user).have.property('username', pm.environment.get('username'));"
+  },
+  {
+    "number": 36,
+    "tool": "POSTMAN",
+    "tip": "validate value length",
+    "codex": "pm.expect(jsonData.user.username).to.have.lengthOf(7)"
+  },
+  {
+    "number": 35,
+    "tool": "POSTMAN",
+    "tip": "validate part of json object",
+    "codex": "user_details = {<br/>    &quot;username&quot;: &quot;admin&quot;,<br/>    &quot;first_name&quot;: &quot;Prashanth&quot;,<br/>    &quot;last_name&quot;: &quot;Sams&quot;,<br/>    &quot;email&quot;: &quot;ab@test.com&quot;,<br/>    &quot;phone&quot;: &quot;+919600945651&quot;<br/>};<br/><br/>pm.expect(jsonData.user).to.deep.include(user_details);"
+  },
+  {
+    "number": 34,
+    "tool": "POSTMAN",
+    "tip": "validate value datatype",
+    "codex": "console.log(typeof pm.response.json().user);<br/><br/>pm.expect(jsonData.user.username).to.be.a(&quot;string&quot;);<br/>pm.expect(jsonData.user.username).to.be.a(&quot;number&quot;);<br/>pm.expect(jsonData.user).to.be.an(&quot;array&quot;);<br/>pm.expect(jsonData.user).to.be.an(&quot;object&quot;);<br/>pm.expect(jsonData.user).to.be.undefined;<br/>pm.expect(jsonData.user).to.be.null;"
+  },
+  {
+    "number": 33,
+    "tool": "POSTMAN",
+    "tip": "find array with a unique value",
+    "codex": "const val = jsonData.user.roles.find(m =&gt; m.id === 59);<br/>console.log(val);"
+  },
+  {
+    "number": 32,
+    "tool": "POSTMAN",
+    "tip": "validate array",
+    "codex": "pm.expect(jsonData.user.roles[0]).to.be.empty;<br/>pm.expect(jsonData.user.roles[0]).to.not.be.empty;<br/><br/>pm.expect(jsonData.user.names).to.have.members([&quot;Prashanth&quot;, &quot;Sunil&quot;]);"
+  },
+  {
+    "number": 31,
+    "tool": "POSTMAN",
+    "tip": "validate field and it's value",
+    "codex": "const jsonData = pm.response.json();<br/>const jsonData = JSON.parse(responseBody);<br/><br/>pm.expect(jsonData.user.username).to.eql(&quot;admin&quot;);<br/>pm.expect(jsonData.user.username).is.to.equal(&quot;admin&quot;);<br/><br/>pm.expect(jsonData.user.roles[0].name).to.include('Sales Manager')<br/>pm.expect(jsonData.user.roles[0].name).to.be.oneOf(['Sales Manager', 'asdasdasd']);<br/><br/>pm.expect(jsonData.user).have.property('username', 'admin');<br/>pm.expect(jsonData.user).have.property('username');<br/>pm.expect(jsonData.user).to.have.property('username');<br/><br/>pm.expect(jsonData.user.roles[0]).to.have.any.keys('id', 'name');<br/>pm.expect(jsonData.user.roles[0]).to.not.have.any.keys('id', 'name');<br/>pm.expect(jsonData.user.roles[0]).to.have.all.keys('id', 'name');<br/><br/>pm.expect(jsonData.user.roles[0]).to.be.an('object').that.has.all.keys('id', 'name');"
+  },
+  {
+    "number": 30,
+    "tool": "POSTMAN",
+    "tip": "validate cookie availability",
+    "codex": "pm.expect(pm.cookies.has('JSESSIONID')).to.be.true;<br/>pm.expect(pm.cookies.get('JSESSIONID')).to.eql('xyz');"
+  },
+  {
+    "number": 29,
+    "tool": "POSTMAN",
+    "tip": "validate response time",
+    "codex": "pm.expect(pm.response.responseTime).to.be.below(2000);"
+  },
+  {
+    "number": 28,
+    "tool": "POSTMAN",
+    "tip": "validate headers",
+    "codex": "pm.response.to.have.header(&quot;Content-Type&quot;);<br/>pm.expect(pm.response.headers.get('Content-Type')).to.eql('application/json; charset=UTF-8');"
+  },
+  {
+    "number": 27,
+    "tool": "POSTMAN",
+    "tip": "validate status",
+    "codex": "pm.response.to.have.status(200);<br/>pm.expect(pm.response.code).to.be.oneOf([200,201]);<br/>pm.response.to.have.status(&quot;OK&quot;);"
+  },
+  {
     "number": 26,
     "tool": "PYTHON",
     "tip": "get values using regex in python",
