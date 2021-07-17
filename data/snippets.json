@@ -1,5 +1,95 @@
 [
   {
+    "number": 78,
+    "tool": "HELM",
+    "tip": "initialize helm [when there is an issue with helm tiller versions]",
+    "codex": "helm init --service-account tiller --override spec.selector.matchLabels.'name'='tiller',spec.selector.matchLabels.'app'='helm' --output yaml | sed 's@apiVersion: extensions/v1beta1@apiVersion: apps/v1@' | kubectl apply -f -"
+  },
+  {
+    "number": 77,
+    "tool": "HELM",
+    "tip": "download & initialize helm",
+    "codex": "brew install kubernetes-helm<br/>helm init"
+  },
+  {
+    "number": 76,
+    "tool": "HELM",
+    "tip": "add helm repo",
+    "codex": "helm3 repo add stable https://kubernetes-charts.storage.googleapis.com<br/>helm3 repo ls<br/>helm3 fetch stable/prometheus-operator<br/>helm3 install &#x2039;release-name&#x203a; -n &#x2039;namespace&#x203a; stable/prometheus-operator"
+  },
+  {
+    "number": 75,
+    "tool": "HELM",
+    "tip": "delete a release",
+    "codex": "helm3 del &#x2039;release-name&#x203a;<br/>helm3 del &#x2039;release-name&#x203a; --namespace &#x2039;namespace&#x203a;<br/><br/>[note: --purge is not required as it is handled by default]"
+  },
+  {
+    "number": 74,
+    "tool": "HELM",
+    "tip": "install helm chart",
+    "codex": "helm3 install &#x2039;chart-name&#x203a; &#x2039;chart-location&#x203a;<br/>helm3 install grafana .<br/>helm3 install grafana . --namespace &#x2039;namespace&#x203a;<br/><br/>helm3 install --generate-name .<br/>[note: no need to mention --name in helm3]"
+  },
+  {
+    "number": 73,
+    "tool": "TERRAFORM",
+    "tip": "basic terraform script to create a EC2 instance",
+    "codex": "provider &quot;aws&quot; {<br/>  version = &quot;~&gt; 2.0&quot;<br/>  region  = &quot;us-west-2&quot;<br/>  shared_credentials_file = &quot;~/.aws/credentials&quot;<br/>  profile = &quot;prashanth&quot;<br/>}<br/><br/>data &quot;aws_ami&quot; &quot;amazon-linux-2&quot; {<br/> most_recent = true<br/> owners = [&quot;amazon&quot;]<br/><br/> filter {<br/>   name   = &quot;name&quot;<br/>   values = [&quot;amzn2-ami-hvm*&quot;]<br/> }<br/><br/> filter {<br/>  name   = &quot;architecture&quot;<br/>  values = [&quot;x86_64&quot;]<br/> }<br/> <br/>}<br/>resource &quot;aws_instance&quot; &quot;test&quot; {<br/> ami                         = &quot;${data.aws_ami.amazon-linux-2.id}&quot;<br/> associate_public_ip_address = true<br/> instance_type               = &quot;t2.micro&quot;<br/>}"
+  },
+  {
+    "number": 72,
+    "tool": "NETWORK",
+    "tip": "know your network mac address (wifi/bluetooth/..)",
+    "codex": "networksetup -listallhardwareports"
+  },
+  {
+    "number": 71,
+    "tool": "NETWORK",
+    "tip": "get your mac addressess from en0",
+    "codex": "ifconfig en0<br/>ifconfig en0 | awk '/ether/{print $2}'<br/>ifconfig -a<br/>ifconfig -a link<br/>networksetup -listallhardwareports | grep Wi-Fi -A 3 | awk '/Ethernet Address:/{print $3}'"
+  },
+  {
+    "number": 70,
+    "tool": "NETWORK",
+    "tip": "list all the mac addressess in the current network",
+    "codex": "arp -a"
+  },
+  {
+    "number": 69,
+    "tool": "HACKING",
+    "tip": "popular wireshark filter cmds",
+    "codex": "tcp.port == 443<br/>ip.addr == 192.168.0.126<br/>ip.dst == 192.168.0.126<br/>ip.src_host == 192.168.0.126<br/>arp<br/>dns and http<br/>tcp.analysis.flags<br/>!(arp or dns or http)<br/>tcp.stream eq 32<br/>tcp contains facebook<br/>http.request<br/>http.response<br/>tcp.flags.syn == 1<br/>tcp.flags.reset == 1<br/>sip &amp;&amp; rtp<br/>"
+  },
+  {
+    "number": 68,
+    "tool": "HACKING",
+    "tip": "live breach information",
+    "codex": "https://informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks/<br/>https://haveibeenpwned.com/"
+  },
+  {
+    "number": 67,
+    "tool": "HACKING",
+    "tip": "gather server router and website information",
+    "codex": "https://www.shodan.io/<br/>https://censys.io/<br/>https://whois.domaintools.com/<br/>https://ivre.rocks/<br/>https://wapiti.sourceforge.io/<br/>https://chrome.google.com/webstore/detail/punkspider-browser-extens/ogdehjeacimkleoocfolppfbkckleach/related?hl=en-US"
+  },
+  {
+    "number": 66,
+    "tool": "CHROME",
+    "tip": "chrome cli switches",
+    "codex": "https://peter.sh/experiments/chromium-command-line-switches/"
+  },
+  {
+    "number": 65,
+    "tool": "MAC",
+    "tip": "set java path in MAC",
+    "codex": "export PATH=&quot;$PATH:$HOME/.rvm/bin&quot;<br/>export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home<br/><br/>alias java8='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_291.jdk/Contents/Home; export PATH=$JAVA_HOME/bin:$PATH'<br/>alias java11='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.11.jdk/Contents/Home; export PATH=$JAVA_HOME/bin:$PATH'<br/>alias java16='export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-16.0.1.jdk/Contents/Home; export PATH=$JAVA_HOME/bin:$PATH'<br/><br/><br/>export PATH=$JAVA_HOME/bin:$PATH"
+  },
+  {
+    "number": 64,
+    "tool": "MAC",
+    "tip": "set alias",
+    "codex": "alias k=kubectl<br/>alias ll='ls -ltrh'<br/>alias m=minikube<br/>alias d=docker"
+  },
+  {
     "number": 63,
     "tool": "MAC",
     "tip": "check if the machine supports hardware virtualization",
@@ -55,7 +145,7 @@
   },
   {
     "number": 54,
-    "tool": "LINKS",
+    "tool": "MISC",
     "tip": "tweet code in twitter",
     "codex": "https://carbon.now.sh/?bg=rgba(171%2C%20184%2C%20195%2C%201)&amp;t=seti&amp;wt=none&amp;l=auto&amp;ds=true&amp;dsyoff=20px&amp;dsblur=68px&amp;wc=true&amp;wa=true&amp;pv=56px&amp;ph=56px&amp;ln=false&amp;fl=1&amp;fm=Hack&amp;fs=14px&amp;lh=133%25&amp;si=false&amp;es=2x&amp;wm=false&amp;code=%2524(find%2520%2524ANDROID_HOME%2520%2524ANDROID_SDK_ROOT%2520-name%2520%2522aapt%2522%2520%257C%2520tail%2520-n%25201)%2520dump%2520badging%2520%253C%252Fpath%252Fto%252Fapk%253E%2520%257C%2520grep%2520package%2520%257C%2520awk%2520%27%257Bprint%2520%25242%257D%27%2520%257C%2520cut%2520-f2%2520-d%255C%253D%2520-d%255C%27"
   },
