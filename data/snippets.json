@@ -1,5 +1,83 @@
 [
   {
+    "number": 63,
+    "tool": "MAC",
+    "tip": "check if the machine supports hardware virtualization",
+    "codex": "sysctl -a | grep machdep.cpu.features<br/>sysctl -a | grep -o VMX"
+  },
+  {
+    "number": 62,
+    "tool": "LINUX",
+    "tip": "check acceleration in LINUX",
+    "codex": "~/Android/Sdk/emulator/emulator -accel-check"
+  },
+  {
+    "number": 61,
+    "tool": "MAC",
+    "tip": "check acceleration in MAC",
+    "codex": "/Users/$(whoami)/Library/Android/sdk/emulator/emulator -accel-check"
+  },
+  {
+    "number": 60,
+    "tool": "LINUX",
+    "tip": "install & start docker in Linux",
+    "codex": "sudo su<br/>apt upgrade -y<br/><br/>sudo apt install docker.io<br/>sudo apt install docker-compose<br/><br/>sudo systemctl start docker<br/>docker info"
+  },
+  {
+    "number": 59,
+    "tool": "PYTHON",
+    "tip": "install python package locally",
+    "codex": "pip3 install -e ."
+  },
+  {
+    "number": 58,
+    "tool": "PYTHON",
+    "tip": "push python package to prod",
+    "codex": "python3 -m pip install --user --upgrade setuptools wheel<br/>python3 -m pip install --upgrade setuptools wheel<br/>python setup.py sdist<br/>pip3 install twine<br/>twine upload dist/*"
+  },
+  {
+    "number": 57,
+    "tool": "PYTHON",
+    "tip": "set temporary python environment",
+    "codex": "python3 -m venv venv<br/>source venv/bin/activate"
+  },
+  {
+    "number": 56,
+    "tool": "MAC",
+    "tip": "find and kill running process",
+    "codex": "ps aux | grep chromedriver<br/>pkill -9 chromedriver"
+  },
+  {
+    "number": 55,
+    "tool": "APPIUM",
+    "tip": "appium android config",
+    "codex": "{<br/>  &quot;deviceName&quot;: &quot;emulator-5554&quot;,<br/>  &quot;automationName&quot;: &quot;UiAutomator2&quot;,<br/>  &quot;platformName&quot;: &quot;Android&quot;,<br/>  &quot;systemPort&quot;: 8200,<br/>  &quot;app&quot;: &quot;/Users/prashanth/Projects/apps/app-world-beta.apk&quot;,<br/>  &quot;autoGrantPermissions&quot;: true,<br/>  &quot;appWaitActivity&quot;: &quot;*&quot;<br/>}"
+  },
+  {
+    "number": 54,
+    "tool": "LINKS",
+    "tip": "tweet code in twitter",
+    "codex": "https://carbon.now.sh/?bg=rgba(171%2C%20184%2C%20195%2C%201)&amp;t=seti&amp;wt=none&amp;l=auto&amp;ds=true&amp;dsyoff=20px&amp;dsblur=68px&amp;wc=true&amp;wa=true&amp;pv=56px&amp;ph=56px&amp;ln=false&amp;fl=1&amp;fm=Hack&amp;fs=14px&amp;lh=133%25&amp;si=false&amp;es=2x&amp;wm=false&amp;code=%2524(find%2520%2524ANDROID_HOME%2520%2524ANDROID_SDK_ROOT%2520-name%2520%2522aapt%2522%2520%257C%2520tail%2520-n%25201)%2520dump%2520badging%2520%253C%252Fpath%252Fto%252Fapk%253E%2520%257C%2520grep%2520package%2520%257C%2520awk%2520%27%257Bprint%2520%25242%257D%27%2520%257C%2520cut%2520-f2%2520-d%255C%253D%2520-d%255C%27"
+  },
+  {
+    "number": 53,
+    "tool": "ANDROID",
+    "tip": "fetch package name from apk",
+    "codex": "$(find $ANDROID_HOME $ANDROID_SDK_ROOT -name &quot;aapt&quot; | tail -n 1) dump badging &lt;/path/to/apk&gt; | grep package | awk '{print $2}' | cut -f2 -d\\= -d\\'"
+  },
+  {
+    "number": 52,
+    "tool": "BITRISE",
+    "tip": "download and installation",
+    "codex": "curl -fL https://github.com/bitrise-io/bitrise/releases/download/1.38.0/bitrise-$(uname -s)-$(uname -m) &gt; /usr/local/bin/bitrise<br/><br/>chmod +x /usr/local/bin/bitrise<br/><br/>bitrise run Baseline"
+  },
+  {
+    "number": 51,
+    "tool": "TYPESCRIPT",
+    "tip": "slack webhooks",
+    "codex": "let slack = new Slack.IncomingWebhook('https://hooks.slack.com/services/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');<br/>    <br/>const options = &lt; Slack.IncomingWebhookOptions&gt;{<br/>    text: 'Hi!',<br/>    channel: 'animation',<br/>    icon_emoji: ':smile:',<br/>    link_names: 1,<br/>    attachments: [<br/>        {<br/>        color: Slack.Color.Danger,<br/>        fields: [<br/>            {<br/>            title: 'Priority',<br/>            value: 'High',<br/>            short: false<br/>            }<br/>        ],<br/>        image_url: 'http://my-website.com/path/to/image.jpg',<br/>        ts: 123456789<br/>        }<br/>    ]<br/>}<br/>await slack.send(options);"
+  },
+  {
     "number": 50,
     "tool": "CYPRESS",
     "tip": "set cookies",
