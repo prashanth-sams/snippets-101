@@ -1,5 +1,71 @@
 [
   {
+    "number": 50,
+    "tool": "CYPRESS",
+    "tip": "set cookies",
+    "codex": "Cypress.Cookies.preserveOnce('SESSION')     // remember cookies for this session:<br/>cy.setCookie('logged_in_cookie_name', '000000000000000000000') // hard coded session cookie<br/>cy.setCookie('security_salt_etc', '000000000000000000000') // its like a revokable password but more secure<br/>"
+  },
+  {
+    "number": 49,
+    "tool": "CYPRESS",
+    "tip": "plugins index",
+    "codex": "https://on.cypress.io/plugins-guide"
+  },
+  {
+    "number": 48,
+    "tool": "CYPRESS",
+    "tip": "open dev tools",
+    "codex": "launchOptions.args.push('--auto-open-devtools-for-tabs')"
+  },
+  {
+    "number": 47,
+    "tool": "CYPRESS",
+    "tip": "headless browser",
+    "codex": "--browser chrome --headless<br/>--browser firefox --headless<br/>--browser electron --headless<br/>--browser chrome:canary --headless<br/>--browser chromium --headless<br/>--browser edge --headless"
+  },
+  {
+    "number": 46,
+    "tool": "CYPRESS",
+    "tip": "load chrome extensions",
+    "codex": "--disable-extensions-except=/path/to/extension/<br/>--load-extension=/path/to/extension/"
+  },
+  {
+    "number": 45,
+    "tool": "CYPRESS",
+    "tip": "cypress installation",
+    "codex": "npm install cypress --save-dev<br/>npm i cypress-multi-reporters --save-dev"
+  },
+  {
+    "number": 44,
+    "tool": "CYPRESS",
+    "tip": "assertions in cypress",
+    "codex": "// text not exist<br/>cy.contains('Prashanth').should('not.exist')<br/><br/>// text contains<br/>cy.title().should('include', title);<br/>cy.title().should('eq', title);<br/><br/>// element exist or not?<br/>cy.get('.check-box-sub-text').should('exist');<br/>cy.get('.check-box-sub-text').should('not.exist');<br/><br/>// assert element text<br/>cy.get('h1.a-spacing-small').should('include.text', 'Sign-In')"
+  },
+  {
+    "number": 43,
+    "tool": "JENKINS",
+    "tip": "allow concurrent builds in a pipeline project",
+    "codex": "pipeline {<br/>  options {<br/>      throttleJobProperty(<br/>          throttleEnabled: true,<br/>          throttleOption: 'category',<br/>      )<br/>  }<br/>}"
+  },
+  {
+    "number": 42,
+    "tool": "MAC",
+    "tip": "check website health with port",
+    "codex": "nc -zv google.com 80"
+  },
+  {
+    "number": 41,
+    "tool": "MAC",
+    "tip": "check if the website is alive",
+    "codex": "brew install fping<br/>fping google.com"
+  },
+  {
+    "number": 40,
+    "tool": "MAC",
+    "tip": "list all the device udid",
+    "codex": "xcrun xctrace list devices<br/>instruments -s devices"
+  },
+  {
     "number": 39,
     "tool": "POSTMAN",
     "tip": "set environment",
@@ -128,7 +194,7 @@
   {
     "number": 18,
     "tool": "JAVASCRIPT",
-    "tip": "command to run in browser console to check if _ngZone properties are false",
+    "tip": "command to run in browser console to check if <code>_ngZone</code> properties are false",
     "codex": "getAllAngularTestabilities()"
   },
   {
