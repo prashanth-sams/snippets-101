@@ -1,5 +1,173 @@
 [
   {
+    "number": 106,
+    "tool": "AWSCLI",
+    "tip": "check existing aws credentials in local",
+    "codex": "cat ~/.aws/credentials"
+  },
+  {
+    "number": 105,
+    "tool": "AWSCLI",
+    "tip": "check existing aws config profiles in local",
+    "codex": "cat ~/.aws/config"
+  },
+  {
+    "number": 104,
+    "tool": "DOCKER",
+    "tip": "copy a file from docker container to local (manual)",
+    "codex": "docker cp container_id:/source_path /target_path<br/>(i.e., docker cp c46e6d6ef9ba:/tmp/source_file.crx /tmp/dest_file.crx)"
+  },
+  {
+    "number": 103,
+    "tool": "DOCKER",
+    "tip": "copy a file into docker container from local (manual)",
+    "codex": "docker cp /source_path container_id:/target_path<br/>(i.e., docker cp /tmp/source_file.crx c46e6d6ef9ba:/tmp/dest_file.crx)"
+  },
+  {
+    "number": 102,
+    "tool": "DOCKER",
+    "tip": "remove all the exited containers",
+    "codex": "docker ps -a | grep Exit | cut -d ' ' -f 1 | xargs docker rm"
+  },
+  {
+    "number": 101,
+    "tool": "DOCKER",
+    "tip": "get specific information from the container details",
+    "codex": "docker inspect -f '{{ property_key }}' container_id<br/>(i.e., docker inspect -f '{{ .Config.Hostname }}' 40375860ee48)"
+  },
+  {
+    "number": 100,
+    "tool": "DOCKER",
+    "tip": "see specific container's logs",
+    "codex": "docker logs --follow &#x2039;container_name/id&#x203a;<br/>(i.e., docker logs --follow 40375860ee48)"
+  },
+  {
+    "number": 99,
+    "tool": "DOCKER",
+    "tip": "get complete details of a container",
+    "codex": "docker inspect &#x2039;container_name/id&#x203a;<br/>(i.e., docker inspect 49c19634177c)"
+  },
+  {
+    "number": 98,
+    "tool": "DOCKER",
+    "tip": "rename docker container",
+    "codex": "docker rename &#x2039;container_id&#x203a; &#x2039;target_container_name&#x203a;<br/>docker rename &#x2039;container_name&#x203a; &#x2039;target_container_name&#x203a;<br/>(i.e, docker rename 49c19634177c sams)"
+  },
+  {
+    "number": 97,
+    "tool": "DOCKER",
+    "tip": "update container's restart service",
+    "codex": "[update single container]<br/>docker update --restart=always &#x2039;container_id&#x203a;<br/><br/>[update all the available containers]<br/>docker update --restart=no $(docker ps -a -q)"
+  },
+  {
+    "number": 96,
+    "tool": "DOCKER",
+    "tip": "lists all the created & running containers",
+    "codex": "docker ps --filter &quot;status=created&quot;<br/>docker ps --filter &quot;status=running&quot;"
+  },
+  {
+    "number": 95,
+    "tool": "DOCKER",
+    "tip": "lists only the in-active/exited/stopped containers",
+    "codex": "docker ps -f &quot;status=exited&quot;<br/>docker ps --filter &quot;status=exited&quot;"
+  },
+  {
+    "number": 94,
+    "tool": "DOCKER",
+    "tip": "lists only container ID",
+    "codex": "docker ps -a | awk '{print $1}'<br/>docker container ls -q"
+  },
+  {
+    "number": 93,
+    "tool": "DOCKER",
+    "tip": "login to your docker hub account with username & password",
+    "codex": "[dynamically provide dockerhub login details on runtime]<br/>docker login<br/><br/>[pre-stored details for dockerhub login]<br/>docker login -u &#x2039;your_dockerhub_username&#x203a; -p &#x2039;your_dockerhub_password&#x203a;"
+  },
+  {
+    "number": 92,
+    "tool": "DOCKER",
+    "tip": "scale up containers in a service",
+    "codex": "docker-compose up --scale &#x2039;service_name&#x203a;=5"
+  },
+  {
+    "number": 91,
+    "tool": "DOCKER",
+    "tip": "removes all dangling images",
+    "codex": "docker images -f dangling=true<br/>docker images purge<br/>docker rmi -f $(docker images -f &quot;dangling=true&quot; -q)"
+  },
+  {
+    "number": 90,
+    "tool": "DOCKER",
+    "tip": "to check history of the specific image",
+    "codex": "docker history &#x2039;image_name&#x203a;"
+  },
+  {
+    "number": 89,
+    "tool": "DOCKER",
+    "tip": "get complete details about an image",
+    "codex": "docker inspect &#x2039;image_name/id&#x203a;"
+  },
+  {
+    "number": 88,
+    "tool": "DOCKER",
+    "tip": "search docker hub for an image",
+    "codex": "docker search &#x2039;search_by_name&#x203a;<br/>(i.e., docker search prashanthsams/selenium-ruby)"
+  },
+  {
+    "number": 87,
+    "tool": "DOCKER",
+    "tip": "find changes to the container's filesystem from start",
+    "codex": "docker diff &#x2039;container_id&#x203a;"
+  },
+  {
+    "number": 86,
+    "tool": "DOCKER",
+    "tip": "check container memory using 3rd party lib in LINUX",
+    "codex": "brew install ctop<br/>ctop -a<br/>"
+  },
+  {
+    "number": 85,
+    "tool": "DOCKER",
+    "tip": "convert your Dockerfile to a docker image",
+    "codex": "[use -t to set image name and tag]<br/><br/>docker build .<br/>docker build &#x2039;dockerfile_path&#x203a;<br/>docker build -t &#x2039;custom_image_name&#x203a; &#x2039;dockerfile_path&#x203a;<br/><br/>[use tag if needed]<br/>docker build -t &#x2039;custom_image_name:tag&#x203a; &#x2039;dockerfile_path&#x203a;"
+  },
+  {
+    "number": 84,
+    "tool": "DOCKER",
+    "tip": "auto-start docker daemon service on device boot",
+    "codex": "[LINUX]<br/>sudo systemctl enable docker<br/><br/>[MAC]<br/>sudo launchctl start docker"
+  },
+  {
+    "number": 83,
+    "tool": "DOCKER",
+    "tip": "check container memory usage (like top in linux)",
+    "codex": "docker stats"
+  },
+  {
+    "number": 82,
+    "tool": "DOCKER",
+    "tip": "remove single image",
+    "codex": "docker image rm image_id<br/>(i.e, docker image rm e9ebb50d366d)"
+  },
+  {
+    "number": 81,
+    "tool": "DOCKER",
+    "tip": "remove all images",
+    "codex": "docker rmi $(docker images -q)"
+  },
+  {
+    "number": 80,
+    "tool": "DOCKER",
+    "tip": "remove all containers",
+    "codex": "docker rm $(docker ps -aq)"
+  },
+  {
+    "number": 79,
+    "tool": "DOCKER",
+    "tip": "stop container(s)",
+    "codex": "[stop single container]<br/>docker stop &#x2039;container_id&#x203a;<br/>docker container stop &#x2039;container_id&#x203a;<br/><br/>[stops all the containers]<br/>docker stop $(docker ps -aq)"
+  },
+  {
     "number": 78,
     "tool": "HELM",
     "tip": "initialize helm [when there is an issue with helm tiller versions]",
