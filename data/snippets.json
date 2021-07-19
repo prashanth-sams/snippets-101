@@ -1,5 +1,269 @@
 [
   {
+    "number": 150,
+    "tool": "KUBERNETES",
+    "tip": "list all the deployments in the default namespace",
+    "codex": "kubectl get deployment kubectl get deployments"
+  },
+  {
+    "number": 149,
+    "tool": "KUBERNETES",
+    "tip": "create deployment that deploy pods with dynamic image name",
+    "codex": "kubectl create deployment &#x2039;deployment_name&#x203a; --image=&#x2039;image_name&#x203a; <br/>(i.e., kubectl create deployment ngnix --image=nginx)"
+  },
+  {
+    "number": 148,
+    "tool": "KUBERNETES",
+    "tip": "delete kubernetes service",
+    "codex": "kubectl delete service &#x2039;service_name&#x203a; --namespace &#x2039;namespace_name&#x203a;<br/>(i.e., kubectl delete service zalenium --namespace zalenium)"
+  },
+  {
+    "number": 147,
+    "tool": "KUBERNETES",
+    "tip": "list all the services from entire namespace",
+    "codex": "kubectl get services --all-namespaces"
+  },
+  {
+    "number": 146,
+    "tool": "KUBERNETES",
+    "tip": "list all the services with selector filter",
+    "codex": "kubectl get services --all-namespaces --selector=&#x2039;selector_name&#x203a;<br/>(i.e., kubectl get services --all-namespaces --selector=app.kubernetes.io/name=zalenium -o wide)"
+  },
+  {
+    "number": 145,
+    "tool": "KUBERNETES",
+    "tip": "list all the services with details [selector]",
+    "codex": "kubectl get services --namespace &#x2039;namespace_name&#x203a; -o wide<br/>(i.e., kubectl get services --namespace zalenium -o wide)"
+  },
+  {
+    "number": 144,
+    "tool": "KUBERNETES",
+    "tip": "list all the services in another namespace",
+    "codex": "kubectl get services --namespace &#x2039;namespace_name&#x203a;<br/>(i.e., kubectl get services --namespace zalenium)"
+  },
+  {
+    "number": 143,
+    "tool": "KUBERNETES",
+    "tip": "list all the services in default namespace",
+    "codex": "kubectl get service<br/>kubectl get services"
+  },
+  {
+    "number": 142,
+    "tool": "KUBERNETES",
+    "tip": "delete specific namespace",
+    "codex": "kubectl delete namespace &#x2039;namespace_name&#x203a;<br/>(i.e., kubectl delete --all pods --namespace=zalenium<br/>kubectl delete namespace zalenium)"
+  },
+  {
+    "number": 141,
+    "tool": "KUBERNETES",
+    "tip": "delete all namespaces",
+    "codex": "kubectl delete --all namespaces"
+  },
+  {
+    "number": 140,
+    "tool": "KUBERNETES",
+    "tip": "list all namespaces with namespace counts",
+    "codex": "kubectl get pods --all-namespaces -o jsonpath=&quot;{..namespace}&quot; |tr -s '[[:space:]]' '\n' |sort |uniq -c"
+  },
+  {
+    "number": 139,
+    "tool": "KUBERNETES",
+    "tip": "list specific namespace with labels",
+    "codex": "kubectl get namespace &#x2039;namespace_name&#x203a; --show-labels<br/>(i.e., kubectl get namespace zalenium --show-labels)"
+  },
+  {
+    "number": 138,
+    "tool": "KUBERNETES",
+    "tip": "list all the namespaces with labels",
+    "codex": "kubectl get namespaces --show-labels"
+  },
+  {
+    "number": 137,
+    "tool": "KUBERNETES",
+    "tip": "list all the namespaces",
+    "codex": "kubectl get namespaces"
+  },
+  {
+    "number": 136,
+    "tool": "KUBERNETES",
+    "tip": "create namespace",
+    "codex": "kubectl create namespace &#x2039;namespace_name&#x203a;<br/>(i.e., kubectl create namespace zalenium)"
+  },
+  {
+    "number": 135,
+    "tool": "KUBERNETES",
+    "tip": "troubleshoot node",
+    "codex": "kubectl describe node &#x2039;node_name&#x203a;<br/>(i.e., kubectl describe node minikube)"
+  },
+  {
+    "number": 134,
+    "tool": "KUBERNETES",
+    "tip": "uncordon the drained node",
+    "codex": "kubectl uncordon<br/>(e.g., kubectl uncordon minikube)"
+  },
+  {
+    "number": 133,
+    "tool": "KUBERNETES",
+    "tip": "remove a node from the service",
+    "codex": "kubectl drain <br/>kubectl drain --ignore-daemonsets --force<br/>(e.g., kubectl drain minikube --ignore-daemonsets --force)"
+  },
+  {
+    "number": 132,
+    "tool": "KUBERNETES",
+    "tip": "get External IP of a node in a cluster",
+    "codex": "kubectl get nodes -o jsonpath='{.items[*].status.addresses[?(@.type==&quot;InternalIP&quot;)].address}'"
+  },
+  {
+    "number": 131,
+    "tool": "KUBERNETES",
+    "tip": "list all nodes in a cluster with details [Internal/External IP, etc.,]",
+    "codex": "kubectl get nodes -o wide"
+  },
+  {
+    "number": 130,
+    "tool": "KUBERNETES",
+    "tip": "list all nodes in a cluster",
+    "codex": "kubectl get nodes"
+  },
+  {
+    "number": 129,
+    "tool": "KUBERNETES",
+    "tip": "list all the available context/config",
+    "codex": "kubectl config get-contexts"
+  },
+  {
+    "number": 128,
+    "tool": "KUBERNETES",
+    "tip": "switch context/config of a cluster",
+    "codex": "kubectl config set current-context &#x2039;config-name&#x203a;<br/>(i.e., kubectl config set current-context minikube)"
+  },
+  {
+    "number": 127,
+    "tool": "KUBERNETES",
+    "tip": "view current kubectl context/config",
+    "codex": "kubectl view config"
+  },
+  {
+    "number": 126,
+    "tool": "KUBERNETES",
+    "tip": "troubleshoot cluster",
+    "codex": "kubectl cluster-info dump"
+  },
+  {
+    "number": 125,
+    "tool": "KUBERNETES",
+    "tip": "cluster details",
+    "codex": "kubectl cluster-info"
+  },
+  {
+    "number": 124,
+    "tool": "HELM",
+    "tip": "install chart dependency",
+    "codex": "helm dependency update<br/>helm dep up &#x2039;chart-name&#x203a;"
+  },
+  {
+    "number": 123,
+    "tool": "HELM",
+    "tip": "inspect the variables in a chart",
+    "codex": "helm inspect values stable/mysql"
+  },
+  {
+    "number": 122,
+    "tool": "KUBERNETES",
+    "tip": "set & view kubeconfig",
+    "codex": "export KUBECONFIG=~/.kube/config<br/>kubectl config view"
+  },
+  {
+    "number": 121,
+    "tool": "HELM",
+    "tip": "extract and delete release",
+    "codex": "helm del $(helm ls | grep 'aus' | awk '{print $1}')<br/>helm del $(helm ls | grep 'FAILED' | awk '{print $1}')"
+  },
+  {
+    "number": 120,
+    "tool": "HELM",
+    "tip": "completely remove release [even from DELETE status]",
+    "codex": "helm del &#x2039;release-name&#x203a; --purge<br/>helm del $(helm ls --all | grep 'DELETED' | awk '{print $1}') --purge"
+  },
+  {
+    "number": 119,
+    "tool": "HELM",
+    "tip": "force delete helm release",
+    "codex": "helm delete --purge --no-hooks &#x2039;release-name&#x203a;"
+  },
+  {
+    "number": 118,
+    "tool": "HELM",
+    "tip": "delete all releases",
+    "codex": "helm del $(helm ls --all --short) --purge"
+  },
+  {
+    "number": 117,
+    "tool": "HELM",
+    "tip": "update helm",
+    "codex": "brew upgrade kubernetes-helm<br/>helm init &#x2014;upgrade"
+  },
+  {
+    "number": 116,
+    "tool": "HELM",
+    "tip": "list release name(s)",
+    "codex": "helm ls --short<br/><br/>[with namespace]<br/>helm ls --all --namespace=sitespeedio --short<br/><br/>[with status deployed]<br/>helm ls --all --namespace=sitespeedio | grep DEPLOYED | awk '{print$1}'<br/>"
+  },
+  {
+    "number": 115,
+    "tool": "HELM",
+    "tip": "list all releases with details",
+    "codex": "helm ls --all<br/>helm list<br/>helm list --namespace=sitespeedio"
+  },
+  {
+    "number": 114,
+    "tool": "HELM",
+    "tip": "release status",
+    "codex": "helm status &#x2039;release-name&#x203a;<br/>e.g., helm status zooming-fish"
+  },
+  {
+    "number": 113,
+    "tool": "HELM",
+    "tip": "version check",
+    "codex": "helm version<br/>tiller version"
+  },
+  {
+    "number": 112,
+    "tool": "HELM",
+    "tip": "uninstall tiller from your kubernetes cluster",
+    "codex": "helm reset --force"
+  },
+  {
+    "number": 111,
+    "tool": "HELM",
+    "tip": "helm chart syntax checker",
+    "codex": "helm lint"
+  },
+  {
+    "number": 110,
+    "tool": "HELM",
+    "tip": "create release",
+    "codex": "[here, sitespeedio is the endpoint created]<br/>helm install --name sitespeedio ./sitespeedio/<br/><br/>[with namespace]<br/>helm install --name sitespeedio . --namespace=sitespeedio<br/><br/>[without name - create release with random name]<br/>helm install . --namespace=sitespeedio"
+  },
+  {
+    "number": 109,
+    "tool": "HELM",
+    "tip": "download remote chart to local",
+    "codex": "helm repo add stable https://kubernetes-charts.storage.googleapis.com/<br/>helm fetch stable/grafana"
+  },
+  {
+    "number": 108,
+    "tool": "HELM",
+    "tip": "search for helm chart from remote repo",
+    "codex": "helm search &#x2039;chart-name&#x203a;<br/>e.g., helm search prometheus"
+  },
+  {
+    "number": 107,
+    "tool": "HELM",
+    "tip": "create endpoint (chart template)",
+    "codex": "helm create sitespeedio"
+  },
+  {
     "number": 106,
     "tool": "AWSCLI",
     "tip": "check existing aws credentials in local",
@@ -175,7 +439,7 @@
   },
   {
     "number": 77,
-    "tool": "HELM",
+    "tool": "HELM, MAC",
     "tip": "download & initialize helm",
     "codex": "brew install kubernetes-helm<br/>helm init"
   },
@@ -189,7 +453,7 @@
     "number": 75,
     "tool": "HELM",
     "tip": "delete a release",
-    "codex": "helm3 del &#x2039;release-name&#x203a;<br/>helm3 del &#x2039;release-name&#x203a; --namespace &#x2039;namespace&#x203a;<br/><br/>[note: --purge is not required as it is handled by default]"
+    "codex": "helm delete &#x2039;release-name&#x203a;<br/>\nhelm3 del &#x2039;release-name&#x203a;<br/>helm3 del &#x2039;release-name&#x203a; --namespace &#x2039;namespace&#x203a;<br/><br/>[note: --purge is not required as it is handled by default]"
   },
   {
     "number": 74,
