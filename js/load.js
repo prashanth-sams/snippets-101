@@ -15,8 +15,8 @@ $(document).ready(function () {
 });
 
 function filterContent(tool) {
-    $.getJSON("data/snippets.json", function (data) {
-        var dataFiltered = toolToFilter == "ALLSNIPPETS" ? data : data.filter(tip => tip.tool == toolToFilter);
+    $.getJSON("data/snippets.json", function (data) {        
+        var dataFiltered = toolToFilter == "ALLSNIPPETS" ? data : data.filter(tip => tip.tool.indexOf(toolToFilter) > -1);
         var cardsToRemove = document.querySelectorAll(".cardItem");
 
         $(cardsToRemove).remove();

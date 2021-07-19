@@ -121,7 +121,7 @@
   },
   {
     "number": 86,
-    "tool": "DOCKER",
+    "tool": "DOCKER, LINUX",
     "tip": "check container memory using 3rd party lib in LINUX",
     "codex": "brew install ctop<br/>ctop -a<br/>"
   },
@@ -133,7 +133,7 @@
   },
   {
     "number": 84,
-    "tool": "DOCKER",
+    "tool": "DOCKER, LINUX, MAC",
     "tip": "auto-start docker daemon service on device boot",
     "codex": "[LINUX]<br/>sudo systemctl enable docker<br/><br/>[MAC]<br/>sudo launchctl start docker"
   },
@@ -199,25 +199,25 @@
   },
   {
     "number": 73,
-    "tool": "TERRAFORM",
+    "tool": "TERRAFORM, AWSEC2",
     "tip": "basic terraform script to create a EC2 instance",
     "codex": "provider &quot;aws&quot; {<br/>  version = &quot;~&gt; 2.0&quot;<br/>  region  = &quot;us-west-2&quot;<br/>  shared_credentials_file = &quot;~/.aws/credentials&quot;<br/>  profile = &quot;prashanth&quot;<br/>}<br/><br/>data &quot;aws_ami&quot; &quot;amazon-linux-2&quot; {<br/> most_recent = true<br/> owners = [&quot;amazon&quot;]<br/><br/> filter {<br/>   name   = &quot;name&quot;<br/>   values = [&quot;amzn2-ami-hvm*&quot;]<br/> }<br/><br/> filter {<br/>  name   = &quot;architecture&quot;<br/>  values = [&quot;x86_64&quot;]<br/> }<br/> <br/>}<br/>resource &quot;aws_instance&quot; &quot;test&quot; {<br/> ami                         = &quot;${data.aws_ami.amazon-linux-2.id}&quot;<br/> associate_public_ip_address = true<br/> instance_type               = &quot;t2.micro&quot;<br/>}"
   },
   {
     "number": 72,
-    "tool": "NETWORK",
+    "tool": "NETWORK, LINUX",
     "tip": "know your network mac address (wifi/bluetooth/..)",
     "codex": "networksetup -listallhardwareports"
   },
   {
     "number": 71,
-    "tool": "NETWORK",
+    "tool": "NETWORK, MAC",
     "tip": "get your mac addressess from en0",
     "codex": "ifconfig en0<br/>ifconfig en0 | awk '/ether/{print $2}'<br/>ifconfig -a<br/>ifconfig -a link<br/>networksetup -listallhardwareports | grep Wi-Fi -A 3 | awk '/Ethernet Address:/{print $3}'"
   },
   {
     "number": 70,
-    "tool": "NETWORK",
+    "tool": "NETWORK, MAC",
     "tip": "list all the mac addressess in the current network",
     "codex": "arp -a"
   },
@@ -229,19 +229,19 @@
   },
   {
     "number": 68,
-    "tool": "HACKING",
+    "tool": "HACKING, LINKS",
     "tip": "live breach information",
     "codex": "https://informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks/<br/>https://haveibeenpwned.com/"
   },
   {
     "number": 67,
-    "tool": "HACKING",
+    "tool": "HACKING, LINKS",
     "tip": "gather server router and website information",
     "codex": "https://www.shodan.io/<br/>https://censys.io/<br/>https://whois.domaintools.com/<br/>https://ivre.rocks/<br/>https://wapiti.sourceforge.io/<br/>https://chrome.google.com/webstore/detail/punkspider-browser-extens/ogdehjeacimkleoocfolppfbkckleach/related?hl=en-US"
   },
   {
     "number": 66,
-    "tool": "CHROME",
+    "tool": "CHROME, LINKS",
     "tip": "chrome cli switches",
     "codex": "https://peter.sh/experiments/chromium-command-line-switches/"
   },
@@ -259,25 +259,25 @@
   },
   {
     "number": 63,
-    "tool": "MAC",
+    "tool": "MAC, APPIUM",
     "tip": "check if the machine supports hardware virtualization",
     "codex": "sysctl -a | grep machdep.cpu.features<br/>sysctl -a | grep -o VMX"
   },
   {
     "number": 62,
-    "tool": "LINUX",
+    "tool": "LINUX, APPIUM",
     "tip": "check acceleration in LINUX",
     "codex": "~/Android/Sdk/emulator/emulator -accel-check"
   },
   {
     "number": 61,
-    "tool": "MAC",
+    "tool": "MAC, APPIUM",
     "tip": "check acceleration in MAC",
     "codex": "/Users/$(whoami)/Library/Android/sdk/emulator/emulator -accel-check"
   },
   {
     "number": 60,
-    "tool": "LINUX",
+    "tool": "LINUX, DOCKER",
     "tip": "install & start docker in Linux",
     "codex": "sudo su<br/>apt upgrade -y<br/><br/>sudo apt install docker.io<br/>sudo apt install docker-compose<br/><br/>sudo systemctl start docker<br/>docker info"
   },
@@ -313,7 +313,7 @@
   },
   {
     "number": 54,
-    "tool": "MISC",
+    "tool": "LINKS",
     "tip": "tweet code in twitter",
     "codex": "https://carbon.now.sh/?bg=rgba(171%2C%20184%2C%20195%2C%201)&amp;t=seti&amp;wt=none&amp;l=auto&amp;ds=true&amp;dsyoff=20px&amp;dsblur=68px&amp;wc=true&amp;wa=true&amp;pv=56px&amp;ph=56px&amp;ln=false&amp;fl=1&amp;fm=Hack&amp;fs=14px&amp;lh=133%25&amp;si=false&amp;es=2x&amp;wm=false&amp;code=%2524(find%2520%2524ANDROID_HOME%2520%2524ANDROID_SDK_ROOT%2520-name%2520%2522aapt%2522%2520%257C%2520tail%2520-n%25201)%2520dump%2520badging%2520%253C%252Fpath%252Fto%252Fapk%253E%2520%257C%2520grep%2520package%2520%257C%2520awk%2520%27%257Bprint%2520%25242%257D%27%2520%257C%2520cut%2520-f2%2520-d%255C%253D%2520-d%255C%27"
   },
@@ -343,7 +343,7 @@
   },
   {
     "number": 49,
-    "tool": "CYPRESS",
+    "tool": "CYPRESS, LINKS",
     "tip": "plugins index",
     "codex": "https://on.cypress.io/plugins-guide"
   },
@@ -385,19 +385,19 @@
   },
   {
     "number": 42,
-    "tool": "MAC",
+    "tool": "MAC, NETWORK",
     "tip": "check website health with port",
     "codex": "nc -zv google.com 80"
   },
   {
     "number": 41,
-    "tool": "MAC",
+    "tool": "MAC, NETWORK",
     "tip": "check if the website is alive",
     "codex": "brew install fping<br/>fping google.com"
   },
   {
     "number": 40,
-    "tool": "MAC",
+    "tool": "MAC, APPIUM",
     "tip": "list all the device udid",
     "codex": "xcrun xctrace list devices<br/>instruments -s devices"
   },
@@ -517,7 +517,7 @@
   },
   {
     "number": 20,
-    "tool": "SQL",
+    "tool": "SQL, MAC",
     "tip": "stop & start mysql in mac",
     "codex": "mysql.server stop<br/>mysqladmin -uroot shutdown<br/><br/>mysql.server start<br/>mysql -uroot"
   },
@@ -571,7 +571,7 @@
   },
   {
     "number": 11,
-    "tool": "SHELL",
+    "tool": "AWSCLI",
     "tip": "command line SSH tunnel",
     "codex": "ssh -v -N -i ~/Documents/bastion-host2.pem ec2-user@54.194.36.65 -L 3366:test-db.env-qa.org:3306<br/>"
   },
@@ -583,7 +583,7 @@
   },
   {
     "number": 9,
-    "tool": "SHELL",
+    "tool": "SHELL, JAVASCRIPT",
     "tip": "execute shell cmds using javascript",
     "codex": "const { exec } = require(&quot;child_process&quot;);<br/><br/>desc('Runner Task');<br/>task('run', function (environment, country) {<br/>  exec(&quot;ls -la&quot;, (error, stdout, stderr) =&gt; {<br/>    if (error) {<br/>        console.log(`error: ${error.message}`);<br/>        return;<br/>    }<br/>    if (stderr) {<br/>        console.log(`stderr: ${stderr}`);<br/>        return;<br/>    }<br/>    console.log(`stdout: ${stdout}`);<br/>  });<br/>});"
   },
@@ -595,19 +595,19 @@
   },
   {
     "number": 7,
-    "tool": "AMAZONLINUX",
+    "tool": "AMAZONLINUX, DOCKER",
     "tip": "access Docker commands in Amazon Linux2 ec2-user",
     "codex": "sudo usermod -a -G docker ec2-user\nsudo chmod 666 /var/run/docker.sock\ndocker version"
   },
   {
     "number": 6,
-    "tool": "AMAZONLINUX",
+    "tool": "AMAZONLINUX, DOCKER",
     "tip": "install & start Docker in Amazon Linux2",
     "codex": "sudo yum update -y\nsudo yum -y install docker\n\nsudo service docker start"
   },
   {
     "number": 5,
-    "tool": "NETWORK",
+    "tool": "NETWORK, JAVASCRIPT",
     "tip": "print ip address using javascript",
     "codex": "import { exec } from 'child_process';\n\nexec('curl ipinfo.io/ip', (err, stdout, stderr) => {\n    logger('ip address of the executor', stdout);\n});"
   },
