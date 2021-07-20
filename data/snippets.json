@@ -207,7 +207,7 @@
     "number": 116,
     "tool": "HELM",
     "tip": "list release name(s)",
-    "codex": "helm ls --short<br/><br/>[with namespace]<br/>helm ls --all --namespace=sitespeedio --short<br/><br/>[with status deployed]<br/>helm ls --all --namespace=sitespeedio | grep DEPLOYED | awk '{print$1}'<br/>"
+    "codex": "helm ls --short<br/><br/>[with namespace]<br/>helm ls --all --namespace=sitespeedio --short<br/><br/>[with status deployed]<br/>helm ls --all --namespace=sitespeedio | grep DEPLOYED | awk '{print$1}'"
   },
   {
     "number": 115,
@@ -387,7 +387,7 @@
     "number": 86,
     "tool": "DOCKER, LINUX",
     "tip": "check container memory using 3rd party lib in LINUX",
-    "codex": "brew install ctop<br/>ctop -a<br/>"
+    "codex": "brew install ctop<br/>ctop -a"
   },
   {
     "number": 85,
@@ -489,7 +489,7 @@
     "number": 69,
     "tool": "HACKING",
     "tip": "popular wireshark filter cmds",
-    "codex": "tcp.port == 443<br/>ip.addr == 192.168.0.126<br/>ip.dst == 192.168.0.126<br/>ip.src_host == 192.168.0.126<br/>arp<br/>dns and http<br/>tcp.analysis.flags<br/>!(arp or dns or http)<br/>tcp.stream eq 32<br/>tcp contains facebook<br/>http.request<br/>http.response<br/>tcp.flags.syn == 1<br/>tcp.flags.reset == 1<br/>sip &amp;&amp; rtp<br/>"
+    "codex": "tcp.port == 443<br/>ip.addr == 192.168.0.126<br/>ip.dst == 192.168.0.126<br/>ip.src_host == 192.168.0.126<br/>arp<br/>dns and http<br/>tcp.analysis.flags<br/>!(arp or dns or http)<br/>tcp.stream eq 32<br/>tcp contains facebook<br/>http.request<br/>http.response<br/>tcp.flags.syn == 1<br/>tcp.flags.reset == 1<br/>sip &amp;&amp; rtp"
   },
   {
     "number": 68,
@@ -603,7 +603,7 @@
     "number": 50,
     "tool": "CYPRESS",
     "tip": "set cookies",
-    "codex": "Cypress.Cookies.preserveOnce('SESSION')     // remember cookies for this session:<br/>cy.setCookie('logged_in_cookie_name', '000000000000000000000') // hard coded session cookie<br/>cy.setCookie('security_salt_etc', '000000000000000000000') // its like a revokable password but more secure<br/>"
+    "codex": "Cypress.Cookies.preserveOnce('SESSION')     // remember cookies for this session:<br/>cy.setCookie('logged_in_cookie_name', '000000000000000000000') // hard coded session cookie<br/>cy.setCookie('security_salt_etc', '000000000000000000000') // its like a revokable password but more secure"
   },
   {
     "number": 49,
@@ -777,7 +777,7 @@
     "number": 21,
     "tool": "CHROME",
     "tip": "open chrome with new profile and cors disabled",
-    "codex": "open -na Google\\ Chrome --args --user-data-dir=/tmp/temporary-chrome-profile-dir --disable-web-security --disable-site-isolation-trials<br/>"
+    "codex": "open -na Google\\ Chrome --args --user-data-dir=/tmp/temporary-chrome-profile-dir --disable-web-security --disable-site-isolation-trials"
   },
   {
     "number": 20,
@@ -789,7 +789,7 @@
     "number": 19,
     "tool": "PYTHON",
     "tip": "read directory or file from the current location",
-    "codex": "Root_Dir=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))<br/>print(Root_Dir)<br/>sys.path.append(Root_Dir)<br/><br/>data_folder=os.path.join(Root_Dir,&quot;data&quot;)<br/>file_path=os.path.join(data_folder,&quot;credential_csv_newtour.csv&quot;)<br/>"
+    "codex": "Root_Dir=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))<br/>print(Root_Dir)<br/>sys.path.append(Root_Dir)<br/><br/>data_folder=os.path.join(Root_Dir,&quot;data&quot;)<br/>file_path=os.path.join(data_folder,&quot;credential_csv_newtour.csv&quot;)"
   },
   {
     "number": 18,
@@ -801,13 +801,13 @@
     "number": 17,
     "tool": "SQL",
     "tip": "import sqldump with tables one by one",
-    "codex": "for SQL in ./testing/*.sql; mysql -h 127.0.0.1 -u root -P 3366 databasename -pc8JQ5J4a &lt; $SQL;<br/>"
+    "codex": "for SQL in ./testing/*.sql; mysql -h 127.0.0.1 -u root -P 3366 databasename -pc8JQ5J4a &lt; $SQL;"
   },
   {
     "number": 16,
     "tool": "SQL",
     "tip": "import sqldump",
-    "codex": "mysql -h 127.0.0.1 -u root -P 3366 databasename -pc8JMQ5J4a &lt; ~/Documents/databasename.sql<br/>"
+    "codex": "mysql -h 127.0.0.1 -u root -P 3366 databasename -pc8JMQ5J4a &lt; ~/Documents/databasename.sql"
   },
   {
     "number": 15,
@@ -819,25 +819,25 @@
     "number": 14,
     "tool": "SQL",
     "tip": "list out all the tables of a database",
-    "codex": "for T in `mysql -h 127.0.0.1 -u root -P 3366 -e 'show tables from databasename' -pc8JjQ5J4a`; do echo $T; done;<br/>"
+    "codex": "for T in `mysql -h 127.0.0.1 -u root -P 3366 -e 'show tables from databasename' -pc8JjQ5J4a`; do echo $T; done;"
   },
   {
     "number": 13,
     "tool": "SQL",
     "tip": "zip sqldump of a database",
-    "codex": "mysqldump -u root -h 127.0.0.1 -P 3366 databasename -pc8JjAjI5J4a --set-gtid-purged=OFF --column-statistics=0 | gzip -c &gt; databasename.dump.gz<br/>"
+    "codex": "mysqldump -u root -h 127.0.0.1 -P 3366 databasename -pc8JjAjI5J4a --set-gtid-purged=OFF --column-statistics=0 | gzip -c &gt; databasename.dump.gz"
   },
   {
     "number": 12,
     "tool": "SQL",
     "tip": "sqldump of a database",
-    "codex": "mysqldump -h 127.0.0.1 -u root -P 3366 -pc8JjAQ5J4a databasename --set-gtid-purged=OFF --column-statistics=0 &gt; databasename.sql<br/>"
+    "codex": "mysqldump -h 127.0.0.1 -u root -P 3366 -pc8JjAQ5J4a databasename --set-gtid-purged=OFF --column-statistics=0 &gt; databasename.sql"
   },
   {
     "number": 11,
     "tool": "AWSCLI",
     "tip": "command line SSH tunnel",
-    "codex": "ssh -v -N -i ~/Documents/bastion-host2.pem ec2-user@54.194.36.65 -L 3366:test-db.env-qa.org:3306<br/>"
+    "codex": "ssh -v -N -i ~/Documents/bastion-host2.pem ec2-user@54.194.36.65 -L 3366:test-db.env-qa.org:3306"
   },
   {
     "number": 10,

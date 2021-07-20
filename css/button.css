@@ -59,17 +59,14 @@
     background: rgba(0, 136, 255, 0.427);
     padding: 5px 10px 5px 10px;
   }
-  /* .formulario label:before {
-    content: "";
+
+  .formulario label:before {
     display: inline-block;
-    width: 17px;
-    height: 17px;
-    position: absolute;
+    transform: scale(1.0);
+    margin: 0px 4.5px 0 0px;
     left: 15px;
     border-radius: 50%;
-    background: none;
-    border: 3px solid #fff;
-  } */
+  }
   .formulario input[type=radio] {
     display: none;
   }

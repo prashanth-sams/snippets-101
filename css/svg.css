@@ -1,0 +1,116 @@
+
+label[for='jenkins']:before {
+  content: url(../svg/jenkins.svg);
+}  
+
+label[for='github']:before {
+  content: url(../svg/github.svg);
+}
+
+label[for='kubernetes']:before {
+  content: url(../svg/kubernetes.svg);
+}
+
+label[for='docker']:before {
+  content: url(../svg/docker.svg);
+}
+
+label[for='linux']:before {
+  content: url(../svg/linux.svg);
+}
+
+label[for='mac']:before {
+  content: url(../svg/mac.svg);
+}
+
+label[for='maven']:before {
+  content: url(../svg/maven.svg);
+}
+
+label[for='network']:before {
+  content: url(../svg/network.svg);
+}
+
+label[for='chrome']:before {
+  content: url(../svg/chrome.svg);
+}
+
+label[for='postman']:before {
+  content: url(../svg/postman.svg);
+}
+
+label[for='cypress']:before {
+  content: url(../svg/cypress.svg);
+}
+
+label[for='amazonlinux']:before {
+  content: url(../svg/amazonlinux.svg);
+}
+
+label[for='awsec2']:before {
+  content: url(../svg/awsec2.svg);
+}
+
+label[for='awscli']:before {
+  content: url(../svg/awscli.svg);
+}
+
+label[for='python']:before {
+  content: url(../svg/python.svg);
+}
+
+label[for='shell']:before {
+  content: url(../svg/shell.svg);
+}
+
+label[for='git']:before {
+  content: url(../svg/git.svg);
+}
+
+label[for='firebase']:before {
+  content: url(../svg/firebase.svg);
+}
+
+label[for='network']:before {
+  content: url(../svg/network.svg);
+}
+
+label[for='javascript']:before {
+  content: url(../svg/javascript.svg);
+}
+
+label[for='sql']:before {
+  content: url(../svg/sql.svg);
+}
+
+label[for='typescript']:before {
+  content: url(../svg/typescript.svg);
+}
+
+label[for='bitrise']:before {
+  content: url(../svg/bitrise.svg);
+}
+
+label[for='appium']:before {
+  content: url(../svg/appium.svg);
+}
+
+label[for='terraform']:before {
+  content: url(../svg/terraform.svg);
+}
+
+label[for='helm']:before {
+  content: url(../svg/helm.svg);
+}
+
+label[for='hacking']:before {
+  content: url(../svg/hacking.svg);
+}
+
+label[for='links']:before {
+  content: url(../svg/links.svg);
+}
+
+label[for='android']:before {
+  content: url(../svg/android.svg);
+}
