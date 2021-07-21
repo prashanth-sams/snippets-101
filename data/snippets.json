@@ -1,5 +1,29 @@
 [
   {
+    "number": 155,
+    "tool": "COPILOT",
+    "tip": "Open Copilot for multiple suggestions - shortcut keys",
+    "codex": "[Windows]<br/>Ctrl + Enter<br/><br/>[Mac]<br/>&#x2303; + Enter"
+  },
+  {
+    "number": 154,
+    "tool": "COPILOT",
+    "tip": "Accept - shortcut key",
+    "codex": "Tab"
+  },
+  {
+    "number": 153,
+    "tool": "COPILOT",
+    "tip": "previous option - shortcut keys",
+    "codex": "Alt + ["
+  },
+  {
+    "number": 152,
+    "tool": "COPILOT",
+    "tip": "next option - shortcut keys",
+    "codex": "Alt + ]"
+  },
+  {
     "number": 151,
     "tool": "LINKS",
     "tip": "download free svg",
