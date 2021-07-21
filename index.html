@@ -185,8 +185,11 @@
         <script id="template" type="text/template">
             <div class='col-sm d-flex mt-4 cardItem'>
                 <div id="card" class='card' style='width: 18rem;'>
-                    <div id="cardBody" class="card-body flex-fill">
-                        <h5 id="number" class="card-title">Snippet #{{number}}</h5>
+                    <div id="cardBody" class="card-body flex-fill" style="background: #f1f1f1;">
+                        <div class="col-sm d-flex">
+                            <h5 id="number" class="card-title">Snippet</h5>
+                            <h5 id="number" class="card-title" style="margin: 0 57%; color: grey;">#{{number}}</h5>
+                        </div>
                         <h6 id="tool" class="card-subtitle mb-2 text-muted">{{tool}}</h6>
                         <p id="tip" class="card-text">{{{tip}}}</p>
                         <button type="button" class="btn btn-primary view-snippet" data-id="{{{codex}}}" onclick="onSnippetCall(this)" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
