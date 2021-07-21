@@ -1,5 +1,11 @@
 [
   {
+    "number": 156,
+    "tool": "GITHUB, DOCKER",
+    "tip": "push image to github docker registry",
+    "codex": "docker login -u &#x2039;USERNAME&#x203a; -p &#x2039;TOKEN&#x203a; docker.pkg.github.com<br/>docker push docker.pkg.github.com/liufa/testdockerandk8/dockerandk8test:0.1<br/><br/>Note:<br/>Here, replace USERNAME with your username and TOKEN with the personal access token generated with read/write/delete:packages enabled in https://github.com/settings/tokens"
+  },
+  {
     "number": 155,
     "tool": "COPILOT",
     "tip": "open copilot for multiple suggestions - shortcut keys",
