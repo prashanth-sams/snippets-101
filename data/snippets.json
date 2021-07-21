@@ -1,5 +1,11 @@
 [
   {
+    "number": 151,
+    "tool": "LINKS",
+    "tip": "download free svg",
+    "codex": "https://vecta.io/symbols/22/aws-sdks/1/aws-cli<br/>https://iconify.design/icon-sets/logos/<br/>https://www.vectorlogo.zone/logos/android/index.html"
+  },
+  {
     "number": 150,
     "tool": "KUBERNETES",
     "tip": "list all the deployments in the default namespace",
