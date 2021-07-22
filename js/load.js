@@ -16,7 +16,7 @@ $(document).ready(function () {
 
 function filterContent(tool) {
     $.getJSON("data/snippets.json", function (data) {        
-        var dataFiltered = toolToFilter == "ALLSNIPPETS" ? data : data.filter(tip => tip.tool.indexOf(toolToFilter) > -1);
+        var dataFiltered = toolToFilter == "ALLSNIPPETS" ? data : data.filter(tip => new RegExp('\\b' + toolToFilter + '\\b', 'i').test(tip.tool));
         var cardsToRemove = document.querySelectorAll(".cardItem");
 
         $(cardsToRemove).remove();
