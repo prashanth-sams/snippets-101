@@ -118,3 +118,7 @@ label[for='android']:before {
 label[for='java']:before {
   content: url(../svg/java.svg);
 }
+
+label[for='junit5']:before {
+  content: url(../svg/junit5.svg);
+}

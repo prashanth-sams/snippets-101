@@ -1,5 +1,11 @@
 [
   {
+    "number": 157,
+    "tool": "MAVEN, JUNIT5",
+    "tip": "include junit4 runner, annotations, and assertions in JUnit5",
+    "codex": "&lt; dependency&gt;<br/>    &lt; groupId&gt;org.junit.vintage&lt; /groupId&gt;<br/>    &lt; artifactId&gt;junit-vintage-engine&lt; /artifactId&gt;<br/>    &lt; version&gt;5.7.2&lt; /version&gt;<br/>    &lt; scope&gt;test&lt; /scope&gt;<br/>&lt; /dependency&gt;"
+  },
+  {
     "number": 156,
     "tool": "GITHUB, DOCKER",
     "tip": "push image to github docker registry",
