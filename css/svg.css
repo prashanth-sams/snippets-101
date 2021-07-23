@@ -122,3 +122,7 @@ label[for='java']:before {
 label[for='junit5']:before {
   content: url(../svg/junit5.svg);
 }
+
+label[for='intellij']:before {
+  content: url(../svg/intellij.svg);
+}

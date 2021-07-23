@@ -1,5 +1,11 @@
 [
   {
+    "number": 158,
+    "tool": "INTELLIJ",
+    "tip": "reformat code - shortcut keys",
+    "codex": "&#x2325; (Option) + &#x2318; (Command) + L"
+  },
+  {
     "number": 157,
     "tool": "MAVEN, JUNIT5",
     "tip": "include junit4 runner, annotations, and assertions in JUnit5",
