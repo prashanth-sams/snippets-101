@@ -1,5 +1,17 @@
 [
   {
+    "number": 164,
+    "tool": "SPRING",
+    "tip": "get property value from resource file",
+    "codex": "@ActiveProfiles({&quot;test&quot;})<br/><br/>@Value(&quot;${wiremock.port:2222}&quot;)<br/>private Integer wmPort;"
+  },
+  {
+    "number": 163,
+    "tool": "SPRING",
+    "tip": "test resource usage",
+    "codex": "&lt; build&gt;<br/>    &lt; testResources&gt;<br/>        &lt; testResource&gt;<br/>            &lt; filtering&gt;true&lt;/filtering&gt;. <br/>            &lt; directory&gt;src/test/resources&lt;/directory&gt;<br/>        &lt; /testResource&gt;<br/>    &lt; /testResources&gt;<br/>&lt; /build&gt;<br/><br/><br/>mvn clean resources:testResources test -DInfoApiTests"
+  },
+  {
     "number": 162,
     "tool": "BASH, MAC",
     "tip": "check if the port is open & kill it",

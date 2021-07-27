@@ -130,3 +130,7 @@ label[for='intellij']:before {
 label[for='bash']:before {
   content: url(../svg/bash.svg);
 }
+
+label[for='spring']:before {
+  content: url(../svg/spring.svg);
+}
