@@ -1,5 +1,17 @@
 [
   {
+    "number": 162,
+    "tool": "BASH, MAC",
+    "tip": "check if the port is open & kill it",
+    "codex": "lsof -i :3000<br/>npx kill-port 3000"
+  },
+  {
+    "number": 161,
+    "tool": "GIT",
+    "tip": "git clone with commit id",
+    "codex": "git clone &#x2039;git-remote-url&#x203a;<br/>cd &#x2039;repo&#x203a;<br/>git fetch origin &#x2039;commit-id&#x203a;<br/>git checkout FETCH_HEAD"
+  },
+  {
     "number": 160,
     "tool": "PACTFLOW",
     "tip": "check system outage",
@@ -529,19 +541,19 @@
   },
   {
     "number": 72,
-    "tool": "NETWORK, LINUX",
+    "tool": "NETWORK, LINUX, BASH",
     "tip": "know your network mac address (wifi/bluetooth/..)",
     "codex": "networksetup -listallhardwareports"
   },
   {
     "number": 71,
-    "tool": "NETWORK, MAC",
+    "tool": "NETWORK, BASH, MAC",
     "tip": "get your mac addressess from en0",
     "codex": "ifconfig en0<br/>ifconfig en0 | awk '/ether/{print $2}'<br/>ifconfig -a<br/>ifconfig -a link<br/>networksetup -listallhardwareports | grep Wi-Fi -A 3 | awk '/Ethernet Address:/{print $3}'"
   },
   {
     "number": 70,
-    "tool": "NETWORK, MAC",
+    "tool": "NETWORK, BASH, MAC",
     "tip": "list all the mac addressess in the current network",
     "codex": "arp -a"
   },
@@ -709,13 +721,13 @@
   },
   {
     "number": 42,
-    "tool": "MAC, NETWORK",
+    "tool": "MAC, BASH, NETWORK",
     "tip": "check website health with port",
     "codex": "nc -zv google.com 80"
   },
   {
     "number": 41,
-    "tool": "MAC, NETWORK",
+    "tool": "BASH, MAC, NETWORK",
     "tip": "check if the website is alive",
     "codex": "brew install fping<br/>fping google.com"
   },
