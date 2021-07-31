@@ -1,5 +1,41 @@
 [
   {
+    "number": 170,
+    "tool": "INTELLIJ, MAC",
+    "tip": "auto-fix all the necessary trailing symbols in the current statement - shortcut keys",
+    "codex": "&#x21e7; &#x2318; &#x23ce;<br/>&#x21e7; (Shift) + &#x2318; (Command) + &#x23ce; (Enter)"
+  },
+  {
+    "number": 169,
+    "tool": "INTELLIJ, MAC",
+    "tip": "list & switch to the recently opened file - shortcut keys",
+    "codex": "&#x2318; E<br/>&#x2318; (Command) + E"
+  },
+  {
+    "number": 168,
+    "tool": "INTELLIJ, MAC",
+    "tip": "get all the the error hints in a file and fix it manually - shortcut keys",
+    "codex": "F2<br/><br/>Note: Press fn key to display F2"
+  },
+  {
+    "number": 167,
+    "tool": "INTELLIJ, MAC",
+    "tip": "auto import - shortcut keys",
+    "codex": "&#x2325; &#x23ce;<br/>&#x2325; (Option) + &#x23ce; (Enter)"
+  },
+  {
+    "number": 166,
+    "tool": "INTELLIJ, MAC",
+    "tip": "generate getter/setter/test template - shortcut keys",
+    "codex": "&#x2318; N<br/>&#x2318; (Command) + N"
+  },
+  {
+    "number": 165,
+    "tool": "INTELLIJ, MAC",
+    "tip": "to create scratch file and execute dynamically - shortcut keys",
+    "codex": "&#x2318; &#x21e7; N<br/>&#x2318; (Command) + &#x21e7; (Shift) + N"
+  },
+  {
     "number": 164,
     "tool": "SPRING",
     "tip": "get property value from resource file",
@@ -7,7 +43,7 @@
   },
   {
     "number": 163,
-    "tool": "SPRING",
+    "tool": "SPRING, MAVEN",
     "tip": "test resource usage",
     "codex": "&lt; build&gt;<br/>    &lt; testResources&gt;<br/>        &lt; testResource&gt;<br/>            &lt; filtering&gt;true&lt;/filtering&gt;. <br/>            &lt; directory&gt;src/test/resources&lt;/directory&gt;<br/>        &lt; /testResource&gt;<br/>    &lt; /testResources&gt;<br/>&lt; /build&gt;<br/><br/><br/>mvn clean resources:testResources test -DInfoApiTests"
   },
@@ -37,9 +73,9 @@
   },
   {
     "number": 158,
-    "tool": "INTELLIJ",
+    "tool": "INTELLIJ, MAC",
     "tip": "reformat code - shortcut keys",
-    "codex": "&#x2325; (Option) + &#x2318; (Command) + L"
+    "codex": "&#x2325; &#x2318; L<br/>&#x2325; (Option) + &#x2318; (Command) + L"
   },
   {
     "number": 157,
@@ -859,7 +895,7 @@
   },
   {
     "number": 21,
-    "tool": "CHROME",
+    "tool": "CHROME, MAC",
     "tip": "open chrome with new profile and cors disabled",
     "codex": "open -na Google\\ Chrome --args --user-data-dir=/tmp/temporary-chrome-profile-dir --disable-web-security --disable-site-isolation-trials"
   },
