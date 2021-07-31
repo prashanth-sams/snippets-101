@@ -1,5 +1,23 @@
 [
   {
+    "number": 175,
+    "tool": "LINKS, JAVA",
+    "tip": "java thread dump analyzer",
+    "codex": "https://ycrash.io/ft-index.jsp"
+  },
+  {
+    "number": 174,
+    "tool": "LINKS, JAVA, ANDROID",
+    "tip": "java & android heap dump analyzer",
+    "codex": "https://ycrash.io/heap-index.jsp"
+  },
+  {
+    "number": 173,
+    "tool": "LINKS, JAVA",
+    "tip": "garbage collection analyzer",
+    "codex": "https://ycrash.io/gc-index.jsp"
+  },
+  {
     "number": 172,
     "tool": "MAC, BASH",
     "tip": "set iterations to copy ouput of the running service",
