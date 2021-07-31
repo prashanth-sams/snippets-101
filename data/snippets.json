@@ -1,5 +1,17 @@
 [
   {
+    "number": 172,
+    "tool": "MAC, BASH",
+    "tip": "set iterations to copy ouput of the running service",
+    "codex": "top -l 1 | pbcopy"
+  },
+  {
+    "number": 171,
+    "tool": "MAC, BASH",
+    "tip": "copy string in cmd line",
+    "codex": "cat pom.xml| pbcopy<br/>pbcopy &lt; ~/.ssh/id_rsa.pub"
+  },
+  {
     "number": 170,
     "tool": "INTELLIJ, MAC",
     "tip": "auto-fix all the necessary trailing symbols in the current statement - shortcut keys",
