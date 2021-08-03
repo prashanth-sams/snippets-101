@@ -1,5 +1,17 @@
 [
   {
+    "number": 177,
+    "tool": "BASH, LINUX, MAC",
+    "tip": "filter environment variables with text",
+    "codex": "env | grep ruby"
+  },
+  {
+    "number": 176,
+    "tool": "BASH, LINUX, MAC",
+    "tip": "list all the env variables set",
+    "codex": "env<br/>printenv<br/>declare -xp"
+  },
+  {
     "number": 175,
     "tool": "LINKS, JAVA",
     "tip": "java thread dump analyzer",
