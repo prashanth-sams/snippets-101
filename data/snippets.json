@@ -1,5 +1,11 @@
 [
   {
+    "number": 178,
+    "tool": "BASH, MAC",
+    "tip": "check if the localhost with port is alive",
+    "codex": "nc -vz localhost 8881<br/><br/>brew install telnet<br/>telnet localhost 8881"
+  },
+  {
     "number": 177,
     "tool": "BASH, LINUX, MAC",
     "tip": "filter environment variables with text",
