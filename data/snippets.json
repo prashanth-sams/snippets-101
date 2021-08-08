@@ -1,5 +1,17 @@
 [
   {
+    "number": 180,
+    "tool": "PACTFLOW, SPRING",
+    "tip": "custom pact output location - consumer-driven",
+    "codex": "@PactTestFor(&quot;target/pacts&quot;)"
+  },
+  {
+    "number": 179,
+    "tool": "LINKS",
+    "tip": "json parser and beautifier",
+    "codex": "https://jsonformatter.org/jsbeautifier"
+  },
+  {
     "number": 178,
     "tool": "BASH, MAC",
     "tip": "check if the localhost with port is alive",
