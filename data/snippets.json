@@ -1,5 +1,23 @@
 [
   {
+    "number": 183,
+    "tool": "PACTFLOW",
+    "tip": "delete tags with versions and tags",
+    "codex": "curl -X DELETE https://testing.pactflow.io/pacticipants/your-service/versions/2.0/tags/prod_v.2 --header 'Authorization: Bearer 0_BY087Fchz7SJc8diTqHs'"
+  },
+  {
+    "number": 182,
+    "tool": "PACTFLOW",
+    "tip": "high-level pact broker information",
+    "codex": "curl -X GET https://emirates.pactflow.io/metrics --header 'Authorization: Bearer 0_BU087Kchz7SJc6duTqHw'"
+  },
+  {
+    "number": 181,
+    "tool": "PACTFLOW",
+    "tip": "pacticipant specific information",
+    "codex": "pact-broker describe-pacticipant --name your-service"
+  },
+  {
     "number": 180,
     "tool": "PACTFLOW, SPRING",
     "tip": "custom pact output location - consumer-driven",
