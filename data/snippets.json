@@ -9,7 +9,7 @@
     "number": 182,
     "tool": "PACTFLOW",
     "tip": "high-level pact broker information",
-    "codex": "curl -X GET https://emirates.pactflow.io/metrics --header 'Authorization: Bearer 0_BU087Kchz7SJc6duTqHw'"
+    "codex": "curl -X GET https://testing.pactflow.io/metrics --header 'Authorization: Bearer 0_BY087Fchz7SJc8diTqHs'"
   },
   {
     "number": 181,
