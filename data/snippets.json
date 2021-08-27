@@ -849,13 +849,13 @@
     "number": 42,
     "tool": "MAC, BASH, NETWORK",
     "tip": "check website health with port",
-    "codex": "nc -zv google.com 80"
+    "codex": "nc -zv google.com 80<br/><br/>curl -I -L 0.0.0.0:3002"
   },
   {
     "number": 41,
     "tool": "BASH, MAC, NETWORK",
     "tip": "check if the website is alive",
-    "codex": "brew install fping<br/>fping google.com"
+    "codex": "brew install fping<br/>fping google.com<br/><br/>curl -I -L google.com"
   },
   {
     "number": 40,
