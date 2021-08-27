@@ -1,5 +1,11 @@
 [
   {
+    "number": 184,
+    "tool": "LINKS",
+    "tip": "replace special characters with HTML entities",
+    "codex": "http://www.htmlescape.net/htmlescape_tool.html"
+  },
+  {
     "number": 183,
     "tool": "PACTFLOW",
     "tip": "delete tags with versions and tags",
