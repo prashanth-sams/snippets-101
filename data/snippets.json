@@ -1,5 +1,29 @@
 [
   {
+    "number": 188,
+    "tool": "LINKS",
+    "tip": "2021 tech radar by thoughtworks",
+    "codex": "https://www.thoughtworks.com/radar/tools"
+  },
+  {
+    "number": 187,
+    "tool": "LINKS",
+    "tip": "jsonPath expression checker",
+    "codex": "https://jsonpath.curiousconcept.com/"
+  },
+  {
+    "number": 186,
+    "tool": "LINKS",
+    "tip": "json/json schema/yml to pojo converter",
+    "codex": "https://www.jsonschema2pojo.org/"
+  },
+  {
+    "number": 185,
+    "tool": "MAC",
+    "tip": "favorite MAC libs from brew",
+    "codex": ""
+  },
+  {
     "number": 184,
     "tool": "LINKS",
     "tip": "replace special characters with HTML entities",
