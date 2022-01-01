@@ -1,5 +1,35 @@
 [
   {
+    "number": 193,
+    "tool": "MAC, CHROME, LINKS",
+    "tip": "inspect device webview console logs in chrome",
+    "codex": "chrome://inspect/#devices"
+  },
+  {
+    "number": 192,
+    "tool": "MAC",
+    "tip": "download and install minikube for apple silicon users",
+    "codex": "curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-darwin-arm64<br/>sudo install minikube-darwin-arm64 /usr/local/bin/minikube<br/>minikube start --driver=docker --alsologtostderr"
+  },
+  {
+    "number": 191,
+    "tool": "LINKS",
+    "tip": "download docker for apple silicon users",
+    "codex": "https://docs.docker.com/desktop/mac/apple-silicon/"
+  },
+  {
+    "number": 190,
+    "tool": "LINKS",
+    "tip": "share your code online",
+    "codex": "https://paste.ofcode.org/"
+  },
+  {
+    "number": 189,
+    "tool": "MAC",
+    "tip": "edit bash profile from text editor",
+    "codex": "open -e ~/.zshrc"
+  },
+  {
     "number": 188,
     "tool": "LINKS",
     "tip": "2021 tech radar by thoughtworks",
