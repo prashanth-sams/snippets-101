@@ -7,13 +7,13 @@
   },
   {
     "number": 192,
-    "tool": "MAC",
+    "tool": "MAC, KUBERNETES",
     "tip": "download and install minikube for apple silicon users",
     "codex": "curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-darwin-arm64<br/>sudo install minikube-darwin-arm64 /usr/local/bin/minikube<br/>minikube start --driver=docker --alsologtostderr"
   },
   {
     "number": 191,
-    "tool": "LINKS",
+    "tool": "MAC, LINKS, DOCKER",
     "tip": "download docker for apple silicon users",
     "codex": "https://docs.docker.com/desktop/mac/apple-silicon/"
   },
