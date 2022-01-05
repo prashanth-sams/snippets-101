@@ -134,3 +134,7 @@ label[for='bash']:before {
 label[for='spring']:before {
   content: url(../svg/spring.svg);
 }
+
+label[for='kotlin']:before {
+  content: url(../svg/kotlin.svg);
+}

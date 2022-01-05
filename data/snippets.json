@@ -3,13 +3,13 @@
     "number": 199,
     "tool": "KOTLIN",
     "tip": "build module with offline mode",
-    "codex": "./gradlew tasks <module>:build --offline"
+    "codex": "./gradlew tasks module_name:build --offline"
   },
   {
     "number": 198,
     "tool": "KOTLIN",
     "tip": "build module",
-    "codex": "./gradlew tasks <module>:build"
+    "codex": "./gradlew tasks module_name:build"
   },
   {
     "number": 197,
@@ -27,7 +27,7 @@
     "number": 195,
     "tool": "KOTLIN",
     "tip": "clean an individual module build",
-    "codex": "./gradlew tasks <module>:clean"
+    "codex": "./gradlew tasks module_name:clean"
   },
   {
     "number": 194,
