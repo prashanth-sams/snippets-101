@@ -1,5 +1,17 @@
 [
   {
+    "number": 201,
+    "tool": "ANDROID",
+    "tip": "uninstall app in a device",
+    "codex": "adb uninstall package_name"
+  },
+  {
+    "number": 200,
+    "tool": "ANDROID",
+    "tip": "list all the package names in a device",
+    "codex": "adb shell pm list packages"
+  },
+  {
     "number": 199,
     "tool": "KOTLIN",
     "tip": "build module with offline mode",
