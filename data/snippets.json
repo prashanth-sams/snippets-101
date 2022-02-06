@@ -1,5 +1,17 @@
 [
   {
+    "number": 203,
+    "tool": "MAC",
+    "tip": "cli cmd to open xcode",
+    "codex": "xed ."
+  },
+  {
+    "number": 202,
+    "tool": "LINKS, JAVASCRIPT",
+    "tip": "convert es6 to commonjs",
+    "codex": "https://babeljs.io/repl/"
+  },
+  {
     "number": 201,
     "tool": "ANDROID",
     "tip": "uninstall app in a device",
